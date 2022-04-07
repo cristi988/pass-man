@@ -1,5 +1,5 @@
 <template>
-    <div class="w-3/12">
+    <div class=" 2xl:w-1/4 lg:w-1/3 md:w-1/2 w-full p-2 mx-auto">
         <div class="rounded-lg bg-slate-700 text-yellow-50 p-2 relative ">
             <div class="flex flex-row justify-between items-center">
                 <div class="rounded-full border-slate-300 border inline-flex p-2">
@@ -36,8 +36,8 @@
                         <i class="bi bi-files text-light" style="font-size: 20px;"></i>
                     </button>
                 </div>
-                <button class="w-20 border-2 rounded-full  hover:border-slate-400" v-on:click="cardOpen=!cardOpen" v-bind:class="{'border-slate-700':!cardOpen, 'border-slate-400':cardOpen}">
-                    <i class="bi bi-three-dots mx-0 px-0" style="font-size:30px;"></i>
+                <button class="w-20 " v-on:click="cardOpen=!cardOpen" >
+                    <i class="bi  mx-0 px-0" v-bind:class="{'bi-toggle-off':!cardOpen, 'bi-toggle-on':cardOpen}" style="font-size:40px;"></i>
                 </button>
             </section>
                

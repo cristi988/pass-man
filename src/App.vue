@@ -4,18 +4,21 @@
       <NavBar/>
     </section>
     <LeftMenu/>
-    <div class="row">
-      <div class="col-2">
-
+    <div class="container mx-auto">
+      <div class="flex flex-wrap border">
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
       </div>
-      <div class="col-10">
-         <div class="row">
-          <CardModal v-bind="details"/>
-         </div>
-      </div>
-    </div>     
-  </div>
-  
+    </div>  
+  </div>       
 </template>
 
 <script>
