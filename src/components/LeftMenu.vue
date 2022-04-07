@@ -33,6 +33,7 @@ export default {
         height: 99%;
         background-color: #5A6B7C;
         color : #EFF2DC;
+        transition: 500ms;
         
         .row{         
             .btn{

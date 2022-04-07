@@ -8,7 +8,7 @@
       <div class="col-2">
 
       </div>
-      <div class="col-10">
+      <div class="col-10 py-5">
          <div class="row">
           <CardModal v-bind="details"/>
          </div>

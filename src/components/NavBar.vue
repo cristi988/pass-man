@@ -21,6 +21,7 @@ export default {
         background-color: #5A6B7C;
         .btn{
             border-color : white; 
+            box-shadow: none;
         }
         .bi {
             color: white;
