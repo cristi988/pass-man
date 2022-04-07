@@ -3,19 +3,22 @@
     <section>
       <NavBar/>
     </section>
-    <LeftMenu/>
-    <div class="row">
-      <div class="col-2">
-
+    <LeftMenu class=" z-50  fixed "/>
+    <div class="container mx-auto">
+      <div class="flex flex-wrap border">
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <!-- <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" />
+          <CardModal v-bind="details" /> -->
       </div>
-      <div class="col-10 py-5">
-         <div class="row">
-          <CardModal v-bind="details"/>
-         </div>
-      </div>
-    </div>     
-  </div>
-  
+    </div>  
+  </div>       
 </template>
 
 <script>
