@@ -1,7 +1,7 @@
 <template>
 
     <div class="col-12 col-md-6 col-xl-4">
-        <div class="card mx-auto bg-dark text-light mx-auto px-3 py-2">
+        <div class="card mx-auto text-light mx-auto px-3 py-2">
             <div class="card-body d-flex justify-content-between">
                 <div class="favicon border border-light">
                     <img :src="d.iconPath" >
@@ -90,6 +90,7 @@ export default {
 
 .card {
     border-radius: 15px !important;
+    background-color: #456b8c;
     .card-body{
         .favicon{
             width: 70px;
@@ -110,7 +111,8 @@ export default {
         border: none;
     }
     .icons-static{
-        background-color: #50585F;
+        background-color: #2e4559;
+        // #50585F
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -118,7 +120,7 @@ export default {
         justify-content: center; 
     }
     .icons{
-        background-color: #50585F;
+        background-color: #2e4559;
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -134,12 +136,12 @@ export default {
         }
     }
     .main-content {
-        background-color: #3E444A;
+        background-color: #17364ffa;
         border-radius: 51px;
     }
     .description {
         border-radius: 15px;
-        background-color: #3E444A;
+        background-color: #17364ffa;
         height: 70px;
     }
     .action-container {
