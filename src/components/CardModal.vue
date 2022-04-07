@@ -1,5 +1,5 @@
 <template>
-    <div class=" 2xl:w-1/4 lg:w-1/3 md:w-1/2 w-full p-2 mx-auto">
+    <div class=" 2xl:w-1/4 lg:w-1/3 md:w-1/2 w-full p-2 mx-auto ">
         <div class="rounded-lg bg-slate-700 text-yellow-50 p-2 relative ">
             <div class="flex flex-row justify-between items-center">
                 <div class="rounded-full border-slate-300 border inline-flex p-2">

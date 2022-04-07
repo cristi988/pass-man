@@ -3,7 +3,7 @@
     <section>
       <NavBar/>
     </section>
-    <LeftMenu/>
+    <LeftMenu class=" z-50  fixed "/>
     <div class="container mx-auto">
       <div class="flex flex-wrap border">
           <CardModal v-bind="details" />
@@ -11,11 +11,11 @@
           <CardModal v-bind="details" />
           <CardModal v-bind="details" />
           <CardModal v-bind="details" />
+          <!-- <CardModal v-bind="details" />
           <CardModal v-bind="details" />
           <CardModal v-bind="details" />
           <CardModal v-bind="details" />
-          <CardModal v-bind="details" />
-          <CardModal v-bind="details" />
+          <CardModal v-bind="details" /> -->
       </div>
     </div>  
   </div>       
