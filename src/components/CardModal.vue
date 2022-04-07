@@ -1,63 +1,59 @@
 <template>
-
-    <div class="col-12 col-md-6 col-xl-4">
-        <div class="card mx-auto bg-dark text-light mx-auto px-3 py-2">
-            <div class="card-body d-flex justify-content-between">
-                <div class="favicon border border-light">
-                    <img :src="d.iconPath" >
+    <div class="w-3/12">
+        <div class="rounded-lg bg-slate-700 text-yellow-50 p-2 relative ">
+            <div class="flex flex-row justify-between items-center">
+                <div class="rounded-full border-slate-300 border inline-flex p-2">
+                    <img :src="d.iconPath" class="w-12" >
                 </div>          
-                <h3 class="card-title mt-3"> Google.com </h3>
-                <div class="icons mt-2">
-                    <button class="button-NB"><i class="bi bi-trash text-light" style="font-size: 25px;"></i></button>
-                </div>
+                <h3 class=" text-xl "> Google.com </h3>
+               <button class=" hover:bg-red-800 w-12 h-12  bg-slate-500 rounded-full flex justify-center items-center ">
+                    <i class="bi bi-trash text-light" style="font-size: 20px;"></i>
+                </button>
             </div>
 
-            <hr>
-
-            <div class="username">
-                <div class="main-content mb-3 d-flex justify-content-between">
-                    <div class="icons-static" style=" margin-left: 5px; margin-top: 3px;">
-                        <i class="bi bi-person " style="font-size: 35px;"></i>
+            <section class="card-body mt-6 relative ">
+                <div class=" rounded-full bg-slate-600 flex justify-between flex-row p-1">
+                    <div class="w-12 h-12 bg-slate-900 rounded-full flex justify-center items-center">
+                        <i class="bi bi-person " style="font-size: 20px;"></i>
                     </div>
-
-                    <div class="mt-3" >
+                    <div class="py-3" >
                         <p >Username</p>
                     </div>
-
-                    <div class="icons" style=" margin-right: 5px; margin-top: 3px;">
-                        <button class="button-NB"><i class="bi bi-files text-light" style="font-size: 20px;"></i></button>
-                    </div>
+                    <button class="hover:bg-slate-400 w-12 h-12  bg-slate-500 rounded-full flex justify-center items-center ">
+                        <i class="bi bi-files text-light" style="font-size: 20px;"></i>
+                    </button>
+                    
                 </div>
-            </div>
 
-            <div class="password">
-                <div class="main-content mb-3 d-flex justify-content-between">
-                    <div class="icons-static" style=" margin-left: 5px; margin-top: 3px;">
-                        <i class="bi bi-key" style="font-size: 35px;"></i>
+                <div class=" w-100 rounded-full bg-slate-600 flex justify-between flex-row p-1 my-2">
+                    <div class="w-12 h-12 bg-slate-900 rounded-full flex justify-center items-center">
+                        <i class="bi bi-key " style="font-size: 20px;"></i>
                     </div>
-
-                    <div class="mt-3" >
-                        <p>*********</p>
+                    <div class="py-3" >
+                        <p >***********</p>
                     </div>
-
-                    <div class="icons" style=" margin-right: 5px; margin-top: 3px;">
-                        <button class="button-NB"><i class="bi bi-files text-light" style="font-size: 20px;"></i></button>
-                    </div>
+                    <button class=" hover:bg-slate-400 w-12 h-12 bg-slate-500 rounded-full flex justify-center items-center ">
+                        <i class="bi bi-files text-light" style="font-size: 20px;"></i>
+                    </button>
                 </div>
-            </div>
+                <button class="w-20 border-2 rounded-full  hover:border-slate-400" v-on:click="cardOpen=!cardOpen" v-bind:class="{'border-slate-700':!cardOpen, 'border-slate-400':cardOpen}">
+                    <i class="bi bi-three-dots mx-0 px-0" style="font-size:30px;"></i>
+                </button>
+            </section>
+               
+            <section class="details" v-if=cardOpen>
 
-            <div class="description d-flex justify-content-center">
-                <p>fghjkl;lkjhgvcvgbhjk</p>
-            </div>
+                <p class="h-auto py-3 flex items-center justify-center bg-slate-600 my-5 rounded-md" >
+                    Tags and everything else
+                </p>
 
-            <div class="action-container d-flex justify-content-between mt-3">
-                <button  class="edit btn col-3"><i class="bi bi-pencil text-light" style="font-size: 25px;"></i></button>
-                <button  class="share btn col-3"><i class="bi bi-share text-light" style="font-size: 25px;"></i></button>
-            </div>
-
+                <div class="flex justify-between">
+                    <button  class="w-3/12 border-2 py-1 border-blue-300 hover:bg-blue-400 rounded-full"><i class="bi bi-pencil text-light" style="font-size: 25px;"></i></button>
+                    <button  class="w-3/12 border-2 py-1 border-yellow-500 hover:bg-yellow-500  rounded-full"><i class="bi bi-share text-light" style="font-size: 25px;"></i></button>
+                </div>
+            </section>
         </div> 
     </div>
-      
 </template>
 
 <script>
@@ -65,6 +61,11 @@ export default {
     name : 'CardModal',
     props: {
         details : Object,        
+    },
+    data : ()=>{
+        return {
+            cardOpen:false
+        }
     },
     computed:{
         d(){
@@ -84,84 +85,3 @@ export default {
     }
 }
 </script>
-
-
-<style lang="scss" scoped>
-
-.card {
-    border-radius: 15px !important;
-    .card-body{
-        .favicon{
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display:flex;
-            align-items: center;
-            justify-content: center;
-            
-                img{
-                    width: 60px;
-                    height: 60px;
-                }
-        }
-    }
-    .button-NB {
-        background: none;
-        border: none;
-    }
-    .icons-static{
-        background-color: #50585F;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center; 
-    }
-    .icons{
-        background-color: #50585F;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-         &:hover{
-           background-color: white;
-            button{
-                .bi{
-                    color: black !important;
-                }
-            }
-        }
-    }
-    .main-content {
-        background-color: #3E444A;
-        border-radius: 51px;
-    }
-    .description {
-        border-radius: 15px;
-        background-color: #3E444A;
-        height: 70px;
-    }
-    .action-container {
-        .edit{
-            border-radius: 51px;
-            background-color: none;
-            border-color: #28A745;
-            &:hover{
-                background-color: #28A745;
-            }
-        }
-        .share {
-            border-radius: 51px;
-            background-color: none;
-            border-color: #1DC1C7;
-             &:hover{
-                background-color: #1DC1C7;
-            }
-        }
-    }   
-}
-
-@import '/node_modules/bootstrap-icons/font/bootstrap-icons.css';
-@import '/node_modules/bootstrap/dist/css/bootstrap.css' 
-</style>
