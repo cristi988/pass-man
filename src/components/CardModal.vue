@@ -21,7 +21,7 @@
                     <div class="py-3" >
                         <p >Username</p>
                     </div>
-                    <button class="hover:bg-slate-400 w-12 h-12  bg-slate-500 rounded-full flex justify-center items-center ">
+                    <button class="hover:bg-slate-400 w-12 h-12  bg-slate-500 rounded-full flex justify-center items-center">
                         <i class="bi bi-files text-light" style="font-size: 20px;"></i>
                     </button>
                     
@@ -50,8 +50,13 @@
                 </p>
 
                 <div class="flex justify-between">
-                    <button  class="w-3/12 border-2 py-1 border-blue-300 hover:bg-blue-400 rounded-full"><i class="bi bi-pencil text-light" style="font-size: 25px;"></i></button>
-                    <button  class="w-3/12 border-2 py-1 border-yellow-500 hover:bg-yellow-500  rounded-full"><i class="bi bi-share text-light" style="font-size: 25px;"></i></button>
+                    <button  class="w-3/12 border-2 py-1 border-blue-300 hover:bg-blue-400 rounded-full">
+                      <i class="bi bi-pencil text-light" style="font-size: 25px;" v-on:click="edit(id)"></i>
+                    </button>
+                    <button  class="w-3/12 border-2 py-1 border-yellow-500 hover:bg-yellow-500  rounded-full">
+                      <i class="bi bi-share text-light" style="font-size: 25px;">
+
+                      </i></button>
                 </div>
             </section>
         </div> 
@@ -62,7 +67,8 @@
 export default {
     name : 'CardModal',
     props: {
-        details : Object,        
+        details : Object,
+        id : String,
     },
     data : ()=>{
         return {
@@ -80,10 +86,15 @@ export default {
                 password : '',
                 tag : '',
                 iconPath :'../images/target.png'                
+              }
             }
-            }
-            
-        }
+        },
+    },
+
+    methods : {
+      edit(id){
+        this.$router.push(`credential/${id}`)
+      }
     }
 }
 </script>

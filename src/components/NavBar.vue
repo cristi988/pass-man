@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar w-full text-left flex items-center px-3">
+    <nav class="navbar w-full text-left flex items-center px-3 fixed ">
       <button class="btn w-10 h-10 text-2xl border rounded-full p-1" v-on:click="toggleLeftMenu()"><i class="bi bi-list"></i></button>
     </nav>
 </template>
@@ -21,5 +21,6 @@ export default {
         background-color: #5A6B7C;
         min-height: 70px;
         color: #EFF2DC;
+        z-index: 999;
     }
 </style>

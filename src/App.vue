@@ -1,35 +1,26 @@
 <template>
   <div id="app">
+    <!-- <LoginPage/> -->
     <section>
       <NavBar/>
     </section>
     <LeftMenu class=" z-50  fixed "/>
+
     <div class="container mx-auto">
-      <div class="flex flex-wrap border">
-          <CardModal v-bind="details" />
-          <CardModal v-bind="details" />
-          <CardModal v-bind="details" />
-          <CardModal v-bind="details" />
-          <CardModal v-bind="details" />
-          <!-- <CardModal v-bind="details" />
-          <CardModal v-bind="details" />
-          <CardModal v-bind="details" />
-          <CardModal v-bind="details" />
-          <CardModal v-bind="details" /> -->
-      </div>
+      <router-view ></router-view>
     </div>  
   </div>       
 </template>
 
 <script>
-import CardModal from './components/CardModal.vue'
 import NavBar from './components/NavBar.vue'
 import LeftMenu from './components/LeftMenu.vue'
+import LoginPage from './components/Loginpage.vue'
 export default {
   components : {
-    CardModal,
     NavBar,
     LeftMenu,
+    LoginPage,
   },
 
   data(){
@@ -59,5 +50,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.container {
+  padding-top: 70px;
 }
 </style>
