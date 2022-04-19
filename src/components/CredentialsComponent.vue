@@ -5,7 +5,11 @@
         <h2 class="text-4xl">Credentials</h2>
       </div>
       <div class="right ">
-        <button class="bg-indigo-600 h-12 w-12 rounded-full text-white text-4xl justify-center flex items-center "><i class="bi bi-plus"></i></button>
+        <router-link to="/form">
+          <button class="bg-indigo-400 h-12 w-12 rounded-full text-white text-4xl justify-center flex items-center ">
+            <i class="bi bi-plus"></i>
+          </button>
+        </router-link>
       </div>
     </div>
 

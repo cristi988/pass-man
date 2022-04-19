@@ -3,7 +3,7 @@
          <div class="flex flex-col items-start text-xl">
 
              <router-link to="/" class="w-full">
-                <button class="w-full btn px-2 py-2 flex justify-between flex-row hover:bg-slate-700">
+                <button class="w-full btn px-2 py-2 flex justify-between flex-row hover:bg-slate-700" >
                     Home<i class="bi bi-house"></i>
                 </button>
             </router-link>
@@ -38,7 +38,9 @@
               </button>
            </router-link>
 
-            <button class="w-full btn px-2 py-2 flex justify-between flex-row hover:bg-slate-700">Logout<i class="bi bi-box-arrow-right"></i></button>
+            <button class="w-full btn px-2 py-2 flex justify-between flex-row hover:bg-slate-700">
+              Logout<i class="bi bi-box-arrow-right"></i>
+            </button>
         </div>
     </div>
 </template>
@@ -60,7 +62,7 @@ export default {
         position: fixed;
         width:220px;
         color: #EFF2DC;
-        background-color: #5A6B7C;
+        background-color: #8FA9BF;
         top : 70px;
     }
 
@@ -73,3 +75,4 @@ export default {
     }
 </style>
 
+<!--#5A6B7C old background colour-->

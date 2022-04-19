@@ -7,6 +7,7 @@ import FilesComponent from '../components/FilesComponent.vue';
 import SettingsComponent from '../components/SettingsComponent.vue';
 import ContactsComponent from "@/components/ContactsComponent";
 import CredentialComponent from "@/components/CredentialComponent";
+import CredentialForm from "@/components/CredentialForm";
 
 
 Vue.use(VueRouter)
@@ -33,7 +34,10 @@ const routes = [
     ]
   },
 
-
+  {
+    path  : '/form',
+    component: CredentialForm,
+  },
 
   {
     path : '/cards',
