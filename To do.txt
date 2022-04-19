@@ -1,0 +1,2 @@
+Make the cards component
+make the form for cards component

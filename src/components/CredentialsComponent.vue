@@ -1,16 +1,21 @@
 <template>
   <div class="mx-auto py-3 w-10/12 float-right lg:float-none lg:w-10/12 md:float-none">
+
     <div class="title flex justify-between">
       <div class="left">
         <h2 class="text-4xl">Credentials</h2>
       </div>
       <div class="right ">
-        <router-link to="/form">
-          <button class="bg-indigo-400 h-12 w-12 rounded-full text-white text-4xl justify-center flex items-center ">
-            <i class="bi bi-plus"></i>
-          </button>
-        </router-link>
+        <button v-on:click="addCredentials()" class="bg-indigo-400 h-12 w-12 rounded-full text-white text-4xl
+        justify-center flex items-center ">
+          <i class="bi bi-plus"></i>
+        </button>
       </div>
+    </div>
+    <hr>
+
+    <div class="search-bar">
+      <input type="text" class="border border-gray-400 rounded w-full">
     </div>
 
     <hr class="my-5">
@@ -21,30 +26,61 @@
       <CardModal v-bind="details" v-bind:id="'4'"/>
       <CardModal v-bind="details" v-bind:id="'5'"/>
     </div>
+
+    <CredentialForm v-if="addNew" class="flex justify-center fixed top-0 left-0 "/>
   </div>
 
 </template>
 
 <script>
-import CardModal from './CardModal.vue'
+import CardModal from './CardModal.vue';
+import CredentialForm from "@/components/CredentialForm";
+
 export default {
     name : 'CredentialsComponent',
 
     components : {
-        CardModal
+        CardModal,
+        CredentialForm
     },
 
     data(){
-    return {
-      details : {
-        target : '',
-        username : '',
-        password : '',
-        tag : '',
-        iconPath : '../images/target.png'
-      }      
-    }
+      return {
+        details : {
+          target : '',
+          username : '',
+          password : '',
+          tag : '',
+          iconPath : '../images/target.png'
+        },
+        addNew : false
+     }
     },
+    methods : {
+      addCredentials(){
+        if(!this.$route.query.add){
+          this.$router.push({name:this.$route.name, query : { add : true }})
+        }else{
+          this.$router.push({name:this.$route.name, query : {  }})
+        }
+      },
+
+      changeRoute(status){
+        this.addNew = status
+      }
+    },
+  watch:{
+      $route: {
+        handler (){
+          this.addNew = !this.addNew
+        },
+        deep: true
+      }
+  },
+  mounted(){
+      console.log(this.$route.query.remove)
+  }
+
 }
 </script>
 

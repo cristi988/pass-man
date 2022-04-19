@@ -26,6 +26,8 @@ const routes = [
   {
     path : '/credentials',
     component : CredentialsComponent,
+    name: 'credentials',
+    props : true,
     children : [
       {
         path : '/credential/:id',
