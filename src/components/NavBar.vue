@@ -1,6 +1,10 @@
 <template>
-    <nav class="navbar w-full text-left flex items-center px-3 fixed bg-">
-      <button class="btn w-10 h-10 text-2xl border rounded-full p-1" v-on:click="toggleLeftMenu()"><i class="bi bi-list"></i></button>
+    <nav class="navbar w-full text-left flex items-center px-3 fixed">
+      <div>
+      <button class="btn w-10 h-10 text-2xl border rounded-full p-1" v-on:click="toggleLeftMenu()">
+        <i class="bi bi-list"></i>
+      </button>
+      </div>
     </nav>
 </template>
 

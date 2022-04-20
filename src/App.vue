@@ -1,21 +1,21 @@
 <template>
   <div id="app">
-    <!-- <LoginPage/> -->
+     <LoginPage/>
 
     <!--NavBar-->
-    <section>
-      <NavBar/>
-    </section>
+<!--    <section>-->
+<!--      <NavBar/>-->
+<!--    </section>-->
     <!--End NavBar-->
 
     <!--Left menu-->
-    <LeftMenu class=" z-50  fixed "/>
+<!--    <LeftMenu class=" z-50  fixed "/>-->
     <!--End Left menu-->
 
     
-    <div class="container mx-auto">
-      <router-view ></router-view>
-    </div>
+<!--    <div class="container mx-auto">-->
+<!--      <router-view ></router-view>-->
+<!--    </div>-->
   </div>       
 </template>
 
