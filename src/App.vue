@@ -1,14 +1,21 @@
 <template>
   <div id="app">
     <!-- <LoginPage/> -->
+
+    <!--NavBar-->
     <section>
       <NavBar/>
     </section>
-    <LeftMenu class=" z-50  fixed "/>
+    <!--End NavBar-->
 
+    <!--Left menu-->
+    <LeftMenu class=" z-50  fixed "/>
+    <!--End Left menu-->
+
+    
     <div class="container mx-auto">
       <router-view ></router-view>
-    </div>  
+    </div>
   </div>       
 </template>
 
@@ -21,6 +28,7 @@ export default {
     NavBar,
     LeftMenu,
     LoginPage,
+
   },
 
   data(){

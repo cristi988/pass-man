@@ -2,12 +2,13 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import HomeComponent from '../components/HomeComponent.vue';
 import CredentialsComponent from '../components/CredentialsComponent.vue';
-import CardsComponent from '../components/CardsComponent.vue';
+import CardsComponent from '../components/BankCardsComponent.vue';
 import FilesComponent from '../components/FilesComponent.vue';
 import SettingsComponent from '../components/SettingsComponent.vue';
 import ContactsComponent from "@/components/ContactsComponent";
-import CredentialComponent from "@/components/CredentialComponent";
-import CredentialForm from "@/components/CredentialForm";
+import CredentialComponent from "@/components/Empty Route/CredentialComponent";
+import CredentialForm from "@/components/Forms/CredentialForm";
+import BankCardComponent from "@/components/Empty Route/BankCardComponent";
 
 
 Vue.use(VueRouter)
@@ -37,13 +38,16 @@ const routes = [
   },
 
   {
-    path  : '/form',
-    component: CredentialForm,
-  },
-
-  {
     path : '/cards',
     component : CardsComponent,
+    name: 'cards',
+    props : true,
+    children : [
+      {
+        path : '/card/:id',
+        component : BankCardComponent ,
+      },
+    ]
   },
 
   {

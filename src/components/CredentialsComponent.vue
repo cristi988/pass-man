@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import CardModal from './CardModal.vue';
-import CredentialForm from "@/components/CredentialForm";
+import CardModal from './Modals/CardModalComponent.vue';
+import CredentialForm from "@/components/Forms/CredentialForm";
 
 export default {
     name : 'CredentialsComponent',

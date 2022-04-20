@@ -34,12 +34,15 @@
                     <div class="py-3" >
                         <p >***********</p>
                     </div>
-                    <button class=" hover:bg-slate-400 w-12 h-12 bg-slate-500 rounded-full flex justify-center items-center ">
+                    <button class=" hover:bg-slate-400 w-12 h-12 bg-slate-500 rounded-full flex justify-center
+                    items-center ">
                         <i class="bi bi-files text-light" style="font-size: 20px;"></i>
                     </button>
                 </div>
                 <button class="w-20 " v-on:click="cardOpen=!cardOpen" >
-                    <i class="bi  mx-0 px-0" v-bind:class="{'bi-toggle-off':!cardOpen, 'bi-toggle-on':cardOpen}" style="font-size:40px;"></i>
+                    <i class="bi  mx-0 px-0" v-bind:class="{'bi-toggle-off':!cardOpen, 'bi-toggle-on':cardOpen}"
+                     style="font-size:40px;">
+                    </i>
                 </button>
             </section>
                
@@ -54,9 +57,8 @@
                       <i class="bi bi-pencil text-light" style="font-size: 25px;" v-on:click="edit(id)"></i>
                     </button>
                     <button  class="w-3/12 border-2 py-1 border-yellow-500 hover:bg-yellow-500  rounded-full">
-                      <i class="bi bi-share text-light" style="font-size: 25px;">
-
-                      </i></button>
+                      <i class="bi bi-share text-light" style="font-size: 25px;"></i>
+                    </button>
                 </div>
             </section>
         </div> 
