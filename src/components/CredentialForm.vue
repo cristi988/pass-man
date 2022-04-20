@@ -54,7 +54,8 @@ export default {
     height: 600px;
   }
   input{
-    @apply px-3
+    @apply px-3;
+    @apply outline-0;
   }
 </style>
 

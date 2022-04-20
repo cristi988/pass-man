@@ -12,10 +12,9 @@
         </button>
       </div>
     </div>
-    <hr>
 
     <div class="search-bar">
-      <input type="text" class="border border-gray-400 rounded w-full">
+      <input placeholder="Searchbar" type="text" class="border border-gray-400 rounded w-full mt-5 h-10 px-2 outline-0">
     </div>
 
     <hr class="my-5">

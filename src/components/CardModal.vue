@@ -2,10 +2,10 @@
 
     <div class=" 2xl:w-1/4 lg:w-1/3 md:w-1/2 w-full p-2 mx-auto ">
         <div class="rounded-lg bg-slate-700 text-yellow-50 p-2 relative ">
+
             <div class="flex flex-row justify-between items-center">
                 <div class="rounded-full border-slate-300 border inline-flex p-2">
                     <img :src="d.iconPath" class="w-12" >
-
                 </div>          
                 <h3 class=" text-xl "> Google.com </h3>
                <button class=" hover:bg-red-800 w-12 h-12  bg-slate-500 rounded-full flex justify-center items-center ">
