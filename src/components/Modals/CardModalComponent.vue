@@ -8,35 +8,35 @@
                     <img :src="d" class="w-12" >
                 </div>          
                 <h3 class=" text-xl "> {{details.target}} </h3>
-               <button class=" bg-red-600 w-12 h-12  bg-white rounded-full flex justify-center items-center ">
-                    <i class="bi bi-trash text-white text-2xl flex justify-centre" ></i>
+               <button class=" bg-red-500 hover:bg-red-600 w-10 h-10  bg-white rounded-full flex justify-center items-center ">
+                    <i class="bi bi-trash text-white text-xl flex justify-centre" ></i>
                 </button>
             </div>
 
             <section class="card-body mt-6 relative ">
-                <div class=" rounded-full bg-slate-600 flex justify-between flex-row p-1">
-                    <div class="w-12 h-12 bg-slate-900 rounded-full flex justify-center items-center">
-                        <i class="bi bi-person " style="font-size: 20px;"></i>
+                <div class=" rounded-full bg-white flex justify-between flex-row p-1">
+                    <div class="w-12 h-12 bg-slate-400 rounded-full flex justify-center items-center">
+                        <i class="bi bi-person text-white" style="font-size: 20px;"></i>
                     </div>
                     <div class="py-3" >
                         <p >{{ details.username }}</p>
                     </div>
-                    <button class="hover:bg-slate-400 w-12 h-12  bg-slate-500 rounded-full flex justify-center items-center">
-                        <i class="bi bi-files text-light" style="font-size: 20px;"></i>
+                    <button class="bg-slate-500 hover:bg-slate-600 w-12 h-12   rounded-full flex justify-center items-center">
+                        <i class="bi bi-files text-white" style="font-size: 20px;"></i>
                     </button>
                     
                 </div>
 
-                <div class=" w-100 rounded-full bg-slate-600 flex justify-between flex-row p-1 my-2">
-                    <div class="w-12 h-12 bg-slate-900 rounded-full flex justify-center items-center">
-                        <i class="bi bi-key " style="font-size: 20px;"></i>
+                <div class=" w-100 rounded-full bg-white flex justify-between flex-row p-1 my-2">
+                    <div class="w-12 h-12 bg-slate-400 rounded-full flex justify-center items-center">
+                        <i class="bi bi-key text-white" style="font-size: 20px;"></i>
                     </div>
                     <div class="py-3" >
                         <p >{{ details.password }}</p>
                     </div>
-                    <button class=" hover:bg-slate-400 w-12 h-12 bg-slate-500 rounded-full flex justify-center
+                    <button class=" bg-slate-500 hover:bg-slate-600 w-12 h-12  rounded-full flex justify-center
                     items-center ">
-                        <i class="bi bi-files text-light" style="font-size: 20px;"></i>
+                        <i class="bi bi-files text-white" style="font-size: 20px;"></i>
                     </button>
                 </div>
                 <button class="w-20 text-gray-600" v-on:click="cardOpen=!cardOpen" >
@@ -48,16 +48,16 @@
                
             <section class="details" v-if=cardOpen>
 
-                <p class="h-auto py-3 flex items-center justify-center bg-slate-600 my-5 rounded-md break-words" >
+                <p class="h-auto py-3 flex items-center justify-center bg-white my-5 rounded-md break-words" >
                   {{ details.tag }}
                 </p>
 
                 <div class="flex justify-between">
-                    <button  class="w-3/12 border-2 py-1 bg-blue-400  rounded-full">
-                      <i class="bi bi-pencil text-light" style="font-size: 25px;" v-on:click="edit(id)"></i>
+                    <button  class="w-3/12 py-1 hover:bg-blue-500 bg-blue-400  rounded-full">
+                      <i class="bi bi-pencil text-white" style="font-size: 25px;" v-on:click="edit(id)"></i>
                     </button>
-                    <button  class="w-3/12 border-2 py-1 bg-yellow-500   rounded-full">
-                      <i class="bi bi-share text-light" style="font-size: 25px;"></i>
+                    <button  class="w-3/12 py-1 hover:bg-yellow-500 bg-yellow-400   rounded-full">
+                      <i class="bi bi-share text-white" style="font-size: 25px;"></i>
                     </button>
                 </div>
             </section>
