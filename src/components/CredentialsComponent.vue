@@ -19,11 +19,8 @@
 
     <hr class="my-5">
     <div class="flex flex-wrap my-5 mx-auto">
-      <CardModal v-bind="details" v-bind:id="'1'"/>
-      <CardModal v-bind="details" v-bind:id="'2'"/>
-      <CardModal v-bind="details" v-bind:id="'3'"/>
-      <CardModal v-bind="details" v-bind:id="'4'"/>
-      <CardModal v-bind="details" v-bind:id="'5'"/>
+      <CardModal v-bind:details="credential" v-bind:key="index" v-bind:id="index" v-for="(credential, index) in credentials"/>
+
     </div>
 
     <CredentialForm v-if="addNew" class="flex justify-center fixed top-0 left-0 "/>
@@ -36,38 +33,38 @@ import CardModal from './Modals/CardModalComponent.vue';
 import CredentialForm from "@/components/Forms/CredentialForm";
 
 export default {
-    name : 'CredentialsComponent',
+  name : 'CredentialsComponent',
 
-    components : {
-        CardModal,
-        CredentialForm
-    },
+  components : {
+      CardModal,
+      CredentialForm
+  },
 
-    data(){
-      return {
-        details : {
-          target : '',
-          username : '',
-          password : '',
-          tag : '',
-          iconPath : '../images/target.png'
-        },
-        addNew : false
-     }
-    },
-    methods : {
-      addCredentials(){
-        if(!this.$route.query.add){
-          this.$router.push({name:this.$route.name, query : { add : true }})
-        }else{
-          this.$router.push({name:this.$route.name, query : {  }})
-        }
-      },
-
-      changeRoute(status){
-        this.addNew = status
+  data(){
+    return {
+      addNew : false
+   }
+  },
+  methods : {
+    addCredentials(){
+      if(!this.$route.query.add){
+        this.$router.push({name:this.$route.name, query : { add : true }})
+      }else{
+        this.$router.push({name:this.$route.name, query : {  }})
       }
     },
+
+    changeRoute(status){
+      this.addNew = status
+    }
+  },
+
+  computed : {
+    credentials(){
+      return this.$store.getters.getCredentials;
+    }
+  },
+
   watch:{
       $route: {
         handler (){
@@ -76,10 +73,6 @@ export default {
         deep: true
       }
   },
-  mounted(){
-      console.log(this.$route.query.remove)
-  }
-
 }
 </script>
 

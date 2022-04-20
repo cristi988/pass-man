@@ -1,28 +1,25 @@
 <template>
   <div id="app">
-     <LoginPage/>
 
     <!--NavBar-->
-<!--    <section>-->
-<!--      <NavBar/>-->
-<!--    </section>-->
+    <section>
+      <NavBar/>
+    </section>
     <!--End NavBar-->
 
     <!--Left menu-->
-<!--    <LeftMenu class=" z-50  fixed "/>-->
+    <LeftMenu class=" z-50 fixed "/>
     <!--End Left menu-->
-
-    
-<!--    <div class="container mx-auto">-->
-<!--      <router-view ></router-view>-->
-<!--    </div>-->
+    <div class="container mx-auto">
+      <router-view ></router-view>
+    </div>
   </div>       
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue'
 import LeftMenu from './components/LeftMenu.vue'
-import LoginPage from './components/Loginpage.vue'
+import LoginPage from './components/LoginPage.vue'
 export default {
   components : {
     NavBar,

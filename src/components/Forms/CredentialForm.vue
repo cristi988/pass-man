@@ -4,27 +4,28 @@
       <h1 class="text-4xl">New Credential</h1>
 
       <div class="mb-3 px-2 mt-5">
-        <label class="flex" >Tag *</label>
-        <input type="text" class=" rounded h-12 w-full mt-2 px-1">
+        <label class="flex" >Target *</label>
+        <input type="text" class=" rounded h-12 w-full mt-2 px-1" v-model="credentials.target">
       </div>
 
       <div class="mb-3 px-2">
         <label class="flex">Username *</label>
-        <input class=" rounded h-12 w-full mt-2 px-1">
+        <input class=" rounded h-12 w-full mt-2 px-1" v-model="credentials.username">
       </div>
 
       <div class="mb-3 px-2">
         <label class="flex">Password *</label>
-        <input class=" rounded h-12 w-full mt-2 px-1">
+        <input class=" rounded h-12 w-full mt-2 px-1" v-model="credentials.password">
       </div>
 
       <div class="mb-3 px-2">
-        <label class="flex">Target</label>
-        <input class="rounded h-28 w-full mt-2 px-1">
+        <label class="flex">Tag</label>
+        <input class="rounded h-28 w-full mt-2 px-1" v-model="credentials.tag">
       </div>
 
       <div class="flex justify-between px-3 mt-7">
-        <button class="border bg-sky-500 border-2 rounded-xl text-2xl w-24 h-12 text-white hover:shadow">
+        <button class="border bg-sky-500 border-2 rounded-xl text-2xl w-24 h-12 text-white hover:shadow"
+          @click="addCredentials()">
           <i class="bi bi-send flex justify-center"></i>
         </button>
         <button class="border bg-amber-300 border-2 text-2xl rounded-2xl w-24 h-12 text-white hover:shadow"
@@ -40,10 +41,26 @@
 export default {
   name: "CredentialForm",
 
+  data(){
+    return {
+      credentials : {
+        target : '',
+        username : '',
+        password : '',
+        tag : '',
+      }
+    }
+  },
+
 
   methods : {
     closeForm(){
       this.$router.push({name:this.$route.name, query : {  }})
+    },
+
+    addCredentials() {
+      this.$store.commit('storeCredentials', this.credentials);
+      this.closeForm()
     }
   }
 }

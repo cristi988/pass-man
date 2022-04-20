@@ -9,6 +9,7 @@ import ContactsComponent from "@/components/ContactsComponent";
 import CredentialComponent from "@/components/Empty Route/CredentialComponent";
 import CredentialForm from "@/components/Forms/CredentialForm";
 import BankCardComponent from "@/components/Empty Route/BankCardComponent";
+import LoginPage from '@/components/LoginPage';
 
 
 Vue.use(VueRouter)
@@ -17,6 +18,11 @@ const routes = [
   {
     path : '/',
     redirect : '/home'
+  },
+
+  {
+    path : '/login',
+    component : LoginPage,
   },
 
   {

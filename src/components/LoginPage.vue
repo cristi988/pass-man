@@ -21,7 +21,7 @@
         </div>
 
         <div class="bg-gray-700 text-white rounded mt-5 w-9/12 h-10 text-2xl flex justify-center ml-12">
-          <button class="w-full">Login</button>
+           <router-link to="/login"><button class="w-full">Login</button></router-link>
         </div>
 
         <div class="text-blue-300 rounded mt-2 h-10 mr-28">
