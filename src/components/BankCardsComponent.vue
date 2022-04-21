@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import BankCardComponent from "@/components/Modals/BankCardModalComponent";
+import BankCardComponent from "@/components/Modals/BankCardModal";
 import BankCardsForm  from "@/components/Forms/BankCardsForm";
 export default {
   name : 'CardsComponent',
@@ -67,8 +67,5 @@ export default {
       deep: true
     }
   },
-  mounted(){
-    console.log(this.$route.query.remove)
-  }
 }
 </script>

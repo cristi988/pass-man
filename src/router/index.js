@@ -10,6 +10,7 @@ import CredentialComponent from "@/components/Empty Route/CredentialComponent";
 import CredentialForm from "@/components/Forms/CredentialForm";
 import BankCardComponent from "@/components/Empty Route/BankCardComponent";
 import LoginPage from '@/components/LoginPage';
+import FileComponent from "@/components/Empty Route/FileComponent";
 
 
 Vue.use(VueRouter)
@@ -59,6 +60,14 @@ const routes = [
   {
     path : '/files',
     component : FilesComponent,
+    name: 'files',
+    props : true,
+    children : [
+      {
+        path : '/file/:id',
+        component : FileComponent,
+      },
+    ]
   },
 
   {

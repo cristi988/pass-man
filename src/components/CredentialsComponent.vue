@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import CardModal from './Modals/CardModalComponent.vue';
+import CardModal from './Modals/CredentialModal.vue';
 import CredentialForm from "@/components/Forms/CredentialForm";
 
 export default {

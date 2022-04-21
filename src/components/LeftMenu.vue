@@ -26,15 +26,15 @@
               </button>
            </router-link>
 
+           <router-link to="/contacts" class="w-full">
+             <button class="w-full btn px-2 py-2 flex justify-between flex-row hover:bg-slate-700">
+               Contacts<i class="bi bi-person-video2"></i>
+             </button>
+           </router-link>
+
            <router-link to="/settings" class="w-full">
               <button class="w-full btn px-2 py-2 flex justify-between flex-row hover:bg-slate-700">
                 Settings<i class="bi bi-gear"></i>
-              </button>
-           </router-link>
-
-           <router-link to="/contacts" class="w-full">
-              <button class="w-full btn px-2 py-2 flex justify-between flex-row hover:bg-slate-700">
-                Contacts<i class="bi bi-person-video2"></i>
               </button>
            </router-link>
 
