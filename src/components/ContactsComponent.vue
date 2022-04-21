@@ -25,6 +25,9 @@
     <hr class="mt-2">
 
     <ContactModal v-bind="test"/>
+    <ContactsForm v-if="addNew" class="flex justify-center fixed top-0 left-0"/>
+
+
   </div>
 </template>
 
@@ -44,6 +47,28 @@ export default {
     return {
       test : true,
       addNew : false,
+    }
+  },
+
+  methods : {
+    addContacts(){
+      if(!this.$route.query.add){
+        this.$router.push({name:this.$route.name, query : { add : true }})
+      }else{
+        this.$router.push({name:this.$route.name, query : {  }})
+      }
+    },
+
+    changeRoute(status){
+      this.addNew = status
+    }
+  },
+  watch:{
+    $route: {
+      handler (){
+        this.addNew = !this.addNew
+      },
+      deep: true
     }
   },
 }

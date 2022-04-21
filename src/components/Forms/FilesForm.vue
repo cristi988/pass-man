@@ -9,7 +9,7 @@
       </div>
       <div class="mb-3 px-2">
         <label class="flex">File description</label>
-        <textarea class="border border-gray-300 rounded h-28 w-full mt-2 px-1 resize-none"></textarea>
+        <textarea class="border border-gray-300 rounded h-28 w-full mt-2 px-1 resize-none outline-none"></textarea>
       </div>
 
       <div class="mb-3 px-2 flex ">

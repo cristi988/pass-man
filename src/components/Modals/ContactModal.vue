@@ -3,7 +3,7 @@
     <p>Boss Giovany</p>
     <p>boss.giovy@yahoo.com</p>
     <p>0765412345</p>
-    <p class="border w-48 break-words">Boss the boss sa moara veta</p>
+    <p class="w-48 break-words">Boss the boss sa moara veta</p>
 
     <div class="flex">
       <button class="flex justify-center items-center bg-sky-500 rounded-xl w-10 h-10">

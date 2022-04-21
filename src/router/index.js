@@ -11,6 +11,7 @@ import CredentialForm from "@/components/Forms/CredentialForm";
 import BankCardComponent from "@/components/Empty Route/BankCardComponent";
 import LoginPage from '@/components/LoginPage';
 import FileComponent from "@/components/Empty Route/FileComponent";
+import ContactComponent from "@/components/Empty Route/ContactComponent";
 
 
 Vue.use(VueRouter)
@@ -78,6 +79,14 @@ const routes = [
   {
     path : '/contacts',
     component: ContactsComponent,
+    name: 'contacts',
+    props : true,
+    children : [
+      {
+        path : '/contact/:id',
+        component : ContactComponent,
+      },
+    ]
   }
 
 

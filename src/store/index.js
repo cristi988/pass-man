@@ -20,7 +20,7 @@ export default new Vuex.Store({
 
     storeCredentials(state, credential) {
       state.credentials = [...state.credentials, credential]
-    }
+    },
 
 
   },
