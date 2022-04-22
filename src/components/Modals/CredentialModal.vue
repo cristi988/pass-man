@@ -67,27 +67,29 @@
 
 <script>
 export default {
-    name : 'CardModal',
-    props: {
-        details : Object,
-        id : Number,
-    },
-    data : ()=>{
-        return {
-            cardOpen:false,
-        }
-    },
-    computed:{
-        d(){
-          return '../images/target.png';
-        },
-    },
-
-    methods : {
-      edit(id){
-        this.$router.push(`credential/${id}`)
+  name : 'CardModal',
+  props: {
+      details : Object,
+      id : Number,
+  },
+  data : ()=>{
+      return {
+          cardOpen:false,
       }
-    },
+  },
+  computed:{
+      d(){
+        return '../images/target.png';
+      },
+  },
+
+  methods : {
+    edit(id){
+      this.$router.push(`credential/${id}`)
+    }
+  },
+
+
 
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-
+    <vue-confirm-dialog></vue-confirm-dialog>
     <!--NavBar-->
     <section>
       <NavBar/>

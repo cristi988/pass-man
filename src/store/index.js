@@ -8,6 +8,7 @@ export default new Vuex.Store({
     menu : false,
     credentials :[],
     bankDetails :[],
+    credentialsEdit : 0,
   },
   getters: {
     getCredentials(state){
@@ -16,6 +17,14 @@ export default new Vuex.Store({
 
     getBankDetails(state){
       return state.bankDetails;
+    },
+
+    getCredentialsEdit(state){
+      if(state.credentialsEdit){
+        return {...state.credentials[state.credentialsEdit]}
+      }else{
+        return null
+      }
     }
   },
   mutations: {

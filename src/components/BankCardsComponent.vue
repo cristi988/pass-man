@@ -59,14 +59,14 @@ export default {
       this.addNew = status
     }
   },
-  watch:{
-    $route: {
-      handler (){
-        this.addNew = !this.addNew
-      },
-      deep: true
-    }
-  },
+    watch:{
+      $route: {
+        handler (){
+          this.addNew = !this.addNew
+        },
+        deep: true
+      }
+    },
 
   computed : {
     bankCards(){

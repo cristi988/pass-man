@@ -61,8 +61,21 @@ export default {
     addCredentials() {
       this.$store.commit('storeCredentials', this.credentials);
       this.closeForm()
+    },
+
+
+  },
+
+  mounted (){
+    if(this.$store.getters.getCredentialsEdit){
+      this.credentials = this.$store.getters.getCredentialsEdit
     }
-  }
+  },
+
+  destroyed(){
+    console.log('destroyed')
+  },
+
 }
 </script>
 

@@ -71,8 +71,8 @@ export default {
       this.closeForm();
     },
 
+  },
 
-  }
 }
 </script>
 

@@ -99,8 +99,32 @@ export default {
 
   methods : {
     deleteCard(){
-      this.$store.dispatch('deleteBankDetails', this.id)
-    }
+      console.log(this.$confirm)
+      this.$confirm(
+          {
+            message: 'Are you sure?',
+            button: {
+              no: 'No',
+              yes: 'Yes'
+            },
+            /**
+             * Callback Function
+             * @param {Boolean} confirm
+             */
+            callback: confirm => {
+              if (confirm) {
+                this.$store.dispatch('deleteBankDetails', this.id)
+                this.$toast.success("Your card has been deleted", {
+                  timeout : 2000,
+                  position: "bottom-right",
+                })
+              }
+            }
+          }
+      )
+
+    },
+
   }
 }
 </script>
