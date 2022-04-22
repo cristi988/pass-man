@@ -5,8 +5,8 @@
     <p>0765412345</p>
     <p class="w-48 break-words">Boss the boss sa moara veta</p>
 
-    <div class="flex">
-      <button class="flex justify-center items-center bg-sky-500 rounded-xl w-10 h-10">
+    <div class="flex ">
+      <button class="mx-3 flex justify-center items-center bg-sky-500 rounded-xl w-10 h-10">
         <i class="bi bi-share text-white"></i>
       </button>
       <button class=" flex justify-center items-center bg-red-500 rounded-xl w-10 h-10">

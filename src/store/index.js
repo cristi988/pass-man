@@ -7,10 +7,15 @@ export default new Vuex.Store({
   state: {
     menu : false,
     credentials :[],
+    bankDetails :[],
   },
   getters: {
     getCredentials(state){
       return state.credentials;
+    },
+
+    getBankDetails(state){
+      return state.bankDetails;
     }
   },
   mutations: {
@@ -22,9 +27,23 @@ export default new Vuex.Store({
       state.credentials = [...state.credentials, credential]
     },
 
+    storeBankDetails(state, bankDetail) {
+      state.bankDetails = [...state.bankDetails, bankDetail];
+    },
+
+    deleteBankDetails(state, id){
+      let bankDetails = state.bankDetails.filter((item, index)=>{
+        return index != id;
+      })
+      state.bankDetails = [...bankDetails];
+    }
+
 
   },
   actions: {
+    deleteBankDetails({commit}, id){
+      commit('deleteBankDetails', id)
+    }
   },
   modules: {
   }

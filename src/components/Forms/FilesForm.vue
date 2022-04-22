@@ -12,9 +12,8 @@
         <textarea class="border border-gray-300 rounded h-28 w-full mt-2 px-1 resize-none outline-none"></textarea>
       </div>
 
-      <div class="mb-3 px-2 flex ">
-        <input type="text" class="w-full h-10 rounded border border-gray-300" placeholder="Choose File">
-        <button class="border border-gray-400 bg-gray-200 rounded">Browse</button>
+      <div class="mb-3 flex justify-between">
+        <input type="file" class="form-control" id="inputGroupFile02">
       </div>
 
       <div class="flex justify-between px-3 mt-7">

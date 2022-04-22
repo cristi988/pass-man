@@ -15,7 +15,7 @@
             <p>Holder Name</p>
           </div>
           <div class="py-3 p-1" >
-            <p >C G Cojita</p>
+            <p >{{ details.name }}</p>
           </div>
         </div>
 
@@ -24,7 +24,7 @@
             <p>Expire Data</p>
           </div>
           <div class="py-3 p-2" >
-            <p >12/30</p>
+            <p >{{details.expireDate}}</p>
           </div>
         </div>
 
@@ -39,7 +39,7 @@
             <p>Card Number</p>
           </div>
           <div class="py-3 p-2" >
-            <p>*****************</p>
+            <p>{{details.cardNumber}}</p>
           </div>
         </div>
 
@@ -48,7 +48,7 @@
             <p>Short Code</p>
           </div>
           <div class="py-3 p-2" >
-            <p>*********</p>
+            <p>{{details.shortCode}}</p>
           </div>
         </div>
 
@@ -57,7 +57,7 @@
             <p>Account number</p>
           </div>
           <div class="py-3 p-2" >
-            <p>********</p>
+            <p>{{details.accountNumber}}</p>
           </div>
         </div>
 
@@ -66,15 +66,15 @@
             <p>CCV</p>
           </div>
           <div class="py-3 p-2" >
-            <p>***</p>
+            <p>{{details.ccv}}</p>
           </div>
         </div>
 
         <div class="flex justify-between mt-2">
           <button  class="w-3/12  py-1 bg-sky-500 rounded-full h-12">
-            <i class="bi bi-eye-slash text-white flex justify-center" style="font-size: 25px;" v-on:click="edit(id)"></i>
+            <i class="bi bi-eye-slash text-white flex justify-center" style="font-size: 25px;"></i>
           </button>
-          <button  class="w-3/12  py-1 bg-red-600 rounded-full h-12">
+          <button  class="w-3/12  py-1 bg-red-600 rounded-full h-12" @click="deleteCard()">
             <i class="bi bi-trash text-white flex justify-center" style="font-size: 25px;"></i>
           </button>
         </div>
@@ -86,10 +86,20 @@
 <script>
 export default {
   name : 'CardsComponent',
+  props : {
+    details : Object,
+    id : Number,
+  },
 
   data : ()=> {
     return  {
       cardOpen : false,
+    }
+  },
+
+  methods : {
+    deleteCard(){
+      this.$store.dispatch('deleteBankDetails', this.id)
     }
   }
 }

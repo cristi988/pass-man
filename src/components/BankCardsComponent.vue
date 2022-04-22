@@ -15,14 +15,15 @@
       <input placeholder="Searchbar" type="text" class="border border-gray-400 rounded w-full mt-5 h-10 px-2 outline-0">
     </div>
     <hr class="mt-5">
+
     <div class=" flex flex-wrap my-5 mx-auto">
-      <BankCardComponent v-bind="test" />
-      <BankCardComponent v-bind="test" />
-      <BankCardComponent v-bind="test" />
-      <BankCardComponent v-bind="test" />
-      <BankCardComponent v-bind="test" />
-      <BankCardComponent v-bind="test" />
+      <BankCardComponent
+          v-for="(bankCard, index) in bankCards"
+          v-bind:key="index"
+          v-bind:id="index"
+          v-bind:details="bankCard"/>
     </div>
+
     <BankCardsForm v-if="addNew" class="flex justify-center fixed top-0 left-0 "/>
   </div>
 
@@ -41,7 +42,6 @@ export default {
 
   data(){
     return {
-      test : true,
       addNew : false,
     }
   },
@@ -67,5 +67,11 @@ export default {
       deep: true
     }
   },
+
+  computed : {
+    bankCards(){
+     return this.$store.getters.getBankDetails;
+    }
+  }
 }
 </script>
