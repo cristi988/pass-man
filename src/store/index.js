@@ -8,30 +8,23 @@ export default new Vuex.Store({
     menu : false,
     credentials :[],
     bankDetails :[],
-    credentialsEdit : 0,
   },
   getters: {
     getCredentials(state){
-      return state.credentials;
+      return [...state.credentials];
     },
 
     getBankDetails(state){
       return state.bankDetails;
     },
-
-    getCredentialsEdit(state){
-      if(state.credentialsEdit){
-        return {...state.credentials[state.credentialsEdit]}
-      }else{
-        return null
-      }
-    }
   },
 
   mutations: {
     toggleMenu(state){
       state.menu = !state.menu;
     },
+
+
 
     storeCredentials(state, credential) {
       state.credentials = [...state.credentials, credential]

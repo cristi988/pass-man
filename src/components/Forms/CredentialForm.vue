@@ -32,8 +32,12 @@
 
       <div class="flex justify-between px-3 mt-7">
         <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500"
-                @click="addCredentials()">
+                @click="addCredentials()" v-if="!edit">
           <i class="bi bi-send flex justify-center"></i>
+        </button>
+         <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500"
+                @click="update()" v-if="edit">
+          <i class="bi bi-pencil flex justify-center"></i>
         </button>
         <button class="border bg-rose-400 text-2xl rounded-2xl w-24 h-12 text-white hover:bg-rose-500"
                 v-on:click="closeForm()">
@@ -55,20 +59,24 @@ export default {
         username : '',
         password : '',
         tag : '',
-      }
+      },
+      edit : false,
     }
   },
 
 
   methods : {
     closeForm(){
-      this.$router.push({name:this.$route.name, query : {  }})
+      this.$router.push({name:this.$route.name, query : {  }}).catch(()=>{})
     },
 
     addCredentials() {
       this.$store.commit('storeCredentials', this.credentials);
-      this.closeForm()
+      this.closeForm();
     },
+    update() {
+      this.$router.push({name:'credentials'}).catch(()=>{});
+    }
 
 
   },
@@ -76,6 +84,13 @@ export default {
   mounted (){
     if(this.$store.getters.getCredentialsEdit){
       this.credentials = this.$store.getters.getCredentialsEdit
+    }
+    if(this.$route.params.id){
+      this.edit = true;
+      let credential = this.$store.getters.getCredentials.filter((item, id)=>{
+        return id == this.$route.params.id
+      })
+      this.credentials = credential[0]
     }
   },
 
