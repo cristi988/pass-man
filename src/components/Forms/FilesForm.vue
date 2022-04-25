@@ -16,12 +16,12 @@
         <input type="file" class="form-control" id="inputGroupFile02">
       </div>
 
-      <div class="flex justify-between px-3 mt-7">
-        <button class="border bg-sky-500 border-2 rounded-xl text-2xl w-24 h-12 text-white hover:shadow"
+      <div class="flex justify-between px-2 mt-7">
+        <button class="border bg-sky-400 border-2 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500"
                 >
           <i class="bi bi-send flex justify-center"></i>
         </button>
-        <button class="border bg-amber-300 border-2 text-2xl rounded-2xl w-24 h-12 text-white hover:shadow"
+        <button class="border bg-rose-400 border-2 text-2xl rounded-2xl w-24 h-12 text-white hover:bg-rose-500"
                 v-on:click="closeForm()">
           <i class="bi bi-x-lg flex justify-center"></i>
         </button>

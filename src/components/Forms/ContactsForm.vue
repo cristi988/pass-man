@@ -24,7 +24,7 @@
       </div>
 
 
-      <div class="flex justify-around items-center w-full h-20 border border-t py-2">
+      <div class="flex justify-around items-center w-full h-20 border-b border-t py-2">
         <i class="bi bi-journal text-2xl w-2/12  flex justify-center"></i>
         <textarea class="w-full outline-none resize-none pt-3 " placeholder="Note"></textarea>
       </div>
@@ -34,7 +34,7 @@
         <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500">
           <i class="bi bi-send flex justify-center"></i>
         </button>
-        <button class="border bg-amber-300 border text-2xl rounded-xl w-24 h-12 text-white hover:bg-amber-400"
+        <button class="border bg-rose-400 border text-2xl rounded-xl w-24 h-12 text-white hover:bg-rose-500"
                 v-on:click="closeForm()">
           <i class="bi bi-x-lg flex justify-center"></i>
         </button>
@@ -60,3 +60,6 @@ export default {
     height: 400px;
   }
 </style>
+
+
+

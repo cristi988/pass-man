@@ -15,7 +15,8 @@
       <input placeholder="Searchbar" type="text" class="border border-gray-400 rounded w-full mt-5 h-10 px-2 outline-0">
     </div>
     <hr class="mt-5">
-    <div class="flex justify-between space-x-28 mt-2 ">
+
+    <div class="columns-5">
       <p>Name</p>
       <p>Email</p>
       <p>Phone Number</p>

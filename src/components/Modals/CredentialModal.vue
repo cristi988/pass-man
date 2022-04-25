@@ -4,37 +4,34 @@
         <div class="card rounded-lg p-2 relative ">
 
             <div class="flex flex-row justify-between items-center">
-                <div class="rounded-full border-slate-300 border inline-flex p-2">
+                <div class=" rounded-full border-slate-300 border border-gray-500 inline-flex p-2">
                     <img :src="d" class="w-12" >
                 </div>          
-                <h3 class=" text-xl "> {{details.target}} </h3>
-               <button class=" bg-red-500 hover:bg-red-600 w-10 h-10  bg-white rounded-full flex justify-center items-center ">
-                    <i class="bi bi-trash text-white text-xl flex justify-centre" ></i>
-                </button>
-            </div>
+                <h3 class=" text-xl w-full"> {{details.target}} </h3>
+                </div>
 
             <section class="card-body mt-6 relative ">
                 <div class=" rounded-full bg-white flex justify-between flex-row p-1">
-                    <div class="w-12 h-12 bg-slate-400 rounded-full flex justify-center items-center">
+                    <div class="hi w-12 h-12  rounded-full flex justify-center items-center">
                         <i class="bi bi-person text-white" style="font-size: 20px;"></i>
                     </div>
                     <div class="py-3" >
                         <p >{{ details.username }}</p>
                     </div>
-                    <button class="bg-slate-500 hover:bg-slate-600 w-12 h-12   rounded-full flex justify-center items-center">
+                    <button class="hy w-12 h-12 rounded-full flex justify-center items-center">
                         <i class="bi bi-files text-white" style="font-size: 20px;"></i>
                     </button>
                     
                 </div>
 
                 <div class=" w-100 rounded-full bg-white flex justify-between flex-row p-1 my-2">
-                    <div class="w-12 h-12 bg-slate-400 rounded-full flex justify-center items-center">
+                    <div class="hi w-12 h-12   rounded-full flex justify-center items-center">
                         <i class="bi bi-key text-white" style="font-size: 20px;"></i>
                     </div>
                     <div class="py-3" >
                         <p >{{ details.password }}</p>
                     </div>
-                    <button class=" bg-slate-500 hover:bg-slate-600 w-12 h-12  rounded-full flex justify-center
+                    <button class="hy w-12 h-12  rounded-full flex justify-center
                     items-center ">
                         <i class="bi bi-files text-white" style="font-size: 20px;"></i>
                     </button>
@@ -48,17 +45,28 @@
                
             <section class="details" v-if=cardOpen>
 
-                <p class="h-auto py-3 flex items-center justify-center bg-white my-5 rounded-md break-words" >
+                <p class="h-auto py-4 pl-1 pt-3
+                flex items-center justify-center
+                  my-5 w-full
+                  bg-white
+                  rounded-md
+                  break-words
+                  text-left
+                  resize-none" >
                   {{ details.tag }}
                 </p>
 
                 <div class="flex justify-between">
-                    <button  class="w-3/12 py-1 hover:bg-blue-500 bg-blue-400  rounded-full">
-                      <i class="bi bi-pencil text-white" style="font-size: 25px;" v-on:click="edit(id)"></i>
-                    </button>
-                    <button  class="w-3/12 py-1 hover:bg-yellow-500 bg-yellow-400   rounded-full">
-                      <i class="bi bi-share text-white" style="font-size: 25px;"></i>
-                    </button>
+                  <button  class="w-3/12 py-1 hover:bg-sky-500 bg-sky-400  rounded-full">
+                    <i class="bi bi-pencil text-white text-2xl"  @click="edit(id)"></i>
+                  </button>
+                  <button class="w-3/12 py-1 hover:bg-red-500 bg-red-400  rounded-full flex justify-center items-center"
+                          @click="deleteCredentials()">
+                    <i class="bi bi-trash text-white text-2xl flex justify-centre" ></i>
+                  </button>
+                  <button  class="w-3/12 py-1 hover:bg-yellow-500 bg-yellow-400   rounded-full">
+                    <i class="bi bi-share text-white text-2xl" ></i>
+                  </button>
                 </div>
             </section>
         </div> 
@@ -67,28 +75,52 @@
 
 <script>
 export default {
-  name : 'CardModal',
+  name: 'CardModal',
   props: {
-      details : Object,
-      id : Number,
+    details: Object,
+    id: Number,
   },
-  data : ()=>{
-      return {
-          cardOpen:false,
-      }
-  },
-  computed:{
-      d(){
-        return '../images/target.png';
-      },
-  },
-
-  methods : {
-    edit(id){
-      this.$router.push(`credential/${id}`)
+  data: () => {
+    return {
+      cardOpen: false,
     }
   },
+  computed: {
+    d() {
+      return '../images/target.png';
+    },
+  },
 
+  methods: {
+    edit(id) {
+      this.$router.push(`credential/${id}`)
+    },
+
+    deleteCredentials(){
+      this.$confirm(
+          {
+            message: 'Are you sure?',
+            button: {
+              no: 'No',
+              yes: 'Yes'
+            },
+            /**
+             * Callback Function
+             * @param {Boolean} confirm
+             */
+            callback: confirm => {
+              if (confirm) {
+                this.$store.dispatch('deleteCredentials' , this.id)
+                this.$toast.success("Your card has been deleted", {
+                  timeout: 2000,
+                  position: "bottom-right",
+                })
+              }
+            }
+          }
+        )
+    }
+  },
 
 
 }
@@ -96,7 +128,20 @@ export default {
 
 <style>
  .card {
-   background-color: #EFF2DC;
+   /*background-color: #EFF2DC;*/
+   background-color: #D4DAD6;
+ }
+
+ .hi {
+   background-color: #94A69F;
+ }
+
+ .hy {
+   background-color: #758C83;
+ }
+
+ .hy:hover {
+   background-color: #566760;
  }
 </style>
 

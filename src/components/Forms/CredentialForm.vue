@@ -1,35 +1,42 @@
 <template>
-  <div class="backdrop-blur-xl pt-20  bg-black bg-opacity-80 fixed w-full h-full ">
-    <div class="form border border-gray-100 bg-gray-200 p-7 sm:w-9/12 w-5/12 mx-auto mt-8 rounded">
-      <h1 class="text-4xl">New Credential</h1>
-
-      <div class="mb-3 px-2 mt-5">
-        <label class="flex" >Target *</label>
-        <input type="text" class=" rounded h-12 w-full mt-2 px-1" v-model="credentials.target">
+  <div class="backdrop-blur-xl pt-20  bg-black bg-opacity-80 fixed w-full h-full">
+    <div class="credentialCard rounded-xl bg-white mt-20 border border-gray-300 w-5/12 mx-auto">
+      <div class="flex justify-start items-center mt-2 text-2xl font-medium">
+        <h1 class=" px-3  mt-2">Create New Credential</h1>
       </div>
 
-      <div class="mb-3 px-2">
-        <label class="flex">Username *</label>
-        <input class=" rounded h-12 w-full mt-2 px-1" v-model="credentials.username">
+      <div class="flex justify-around w-full mt-5 items-center border-t">
+        <i class="bi bi-bullseye text-2xl w-2/12 flex justify-center items-center"></i>
+        <input type="text" placeholder="Target" class="w-full py-4 h-full" v-model="credentials.target">
       </div>
 
-      <div class="mb-3 px-2">
-        <label class="flex">Password *</label>
-        <input class=" rounded h-12 w-full mt-2 px-1" v-model="credentials.password">
+
+      <div class="flex justify-around w-full h-14 border-t">
+        <i class="bi bi-person-circle text-2xl w-2/12 flex justify-center items-center"></i>
+        <input type="text" placeholder="Username" class="w-full" v-model="credentials.username">
       </div>
 
-      <div class="mb-3 px-2">
-        <label class="flex">Tag</label>
-        <textarea class="rounded h-28 w-full mt-2 px-1 resize-none" v-model="credentials.tag"></textarea>
+
+      <div class="flex justify-around w-full h-14 border-t">
+        <i class="bi bi-key text-2xl w-2/12 flex justify-center items-center"></i>
+        <input type="text" placeholder="Password" class="w-full" v-model="credentials.password">
       </div>
+
+
+      <div class="flex justify-around items-center w-full h-20 border-b border-t py-2">
+        <i class="bi bi-journal text-2xl w-2/12  flex justify-center mb-2.5"></i>
+        <textarea class="w-full resize-none pt-3 outline-none ml-3" placeholder="Tag" v-model="credentials.tag">
+        </textarea>
+      </div>
+
 
       <div class="flex justify-between px-3 mt-7">
-        <button class="border bg-sky-500 border-2 rounded-xl text-2xl w-24 h-12 text-white hover:shadow"
-          @click="addCredentials()">
+        <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500"
+                @click="addCredentials()">
           <i class="bi bi-send flex justify-center"></i>
         </button>
-        <button class="border bg-amber-300 border-2 text-2xl rounded-2xl w-24 h-12 text-white hover:shadow"
-        v-on:click="closeForm()">
+        <button class="border bg-rose-400 text-2xl rounded-2xl w-24 h-12 text-white hover:bg-rose-500"
+                v-on:click="closeForm()">
           <i class="bi bi-x-lg flex justify-center"></i>
         </button>
       </div>
@@ -80,12 +87,20 @@ export default {
 </script>
 
 <style scoped>
-  .form {
-    height: 600px;
-  }
   input{
     @apply px-3;
     @apply outline-0;
   }
+
+  .credentialCard{
+    height: 420px;
+  }
 </style>
+
+
+
+
+
+
+
 

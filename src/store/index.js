@@ -27,6 +27,7 @@ export default new Vuex.Store({
       }
     }
   },
+
   mutations: {
     toggleMenu(state){
       state.menu = !state.menu;
@@ -45,15 +46,28 @@ export default new Vuex.Store({
         return index != id;
       })
       state.bankDetails = [...bankDetails];
+    },
+
+    deleteCredentials(state, id){
+      let credentials =state.credentials.filter((item, index)=>{
+        return index != id;
+      })
+      state.credentials = [...credentials];
     }
-
-
   },
+
+
   actions: {
     deleteBankDetails({commit}, id){
       commit('deleteBankDetails', id)
+    },
+
+    deleteCredentials({commit}, id){
+      commit('deleteCredentials', id)
     }
   },
+
+
   modules: {
   }
 })

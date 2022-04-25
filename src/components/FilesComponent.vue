@@ -26,14 +26,14 @@
     </div>
 
 
-    <div class="flex justify-between space-x-28 mt-2 ">
-      <p>Name</p>
-      <p>Description</p>
-      <p>Category</p>
-      <p>Size</p>
-      <p>Type</p>
-      <p>Uploaded</p>
-      <p>Actions</p>
+    <div class="columns-7">
+        <p>Name</p>
+        <p>Description</p>
+        <p>Category</p>
+        <p>Size</p>
+        <p>Type</p>
+        <p>Uploaded</p>
+        <p>Actions</p>
     </div>
     <hr class="mt-2">
 

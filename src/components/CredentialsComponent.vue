@@ -5,10 +5,14 @@
       <div class="left">
         <h2 class="text-4xl">Credentials</h2>
       </div>
-      <div class="right ">
-        <button v-on:click="addCredentials()" class="bg-indigo-400 h-12 w-12 rounded-full text-white text-4xl
-        justify-center flex items-center ">
-          <i class="bi bi-plus"></i>
+      <div class="flex justify-between">
+        <button v-on:click="addCredentials()" class="bg-indigo-400 h-12 w-52 rounded-full text-white text-xl
+        justify-center flex items-center ">Add Credential
+          <i class="bi bi-plus text-3xl flex justify-centre "></i>
+        </button>
+        <button v-on:click="addCredentials()" class=" ml-2 bg-indigo-400 h-12 w-52 rounded-full text-white text-xl
+        justify-center flex items-center ">Upload List
+          <i class="bi bi-cloud-arrow-up text-4xl flex justify-centre ml-2"></i>
         </button>
       </div>
     </div>
@@ -19,8 +23,11 @@
 
     <hr class="my-5">
     <div class="flex flex-wrap my-5 mx-auto">
-      <CardModal v-bind:details="credential" v-bind:key="index" v-bind:id="index" v-for="(credential, index) in credentials"/>
-
+      <CardModal
+          v-bind:details="credential"
+          v-bind:key="index"
+          v-bind:id="index"
+          v-for="(credential, index) in credentials"/>
     </div>
 
     <CredentialForm v-if="addNew" class="flex justify-center fixed top-0 left-0 "/>
@@ -59,12 +66,6 @@ export default {
     }
   },
 
-  computed : {
-    credentials(){
-      return this.$store.getters.getCredentials;
-    }
-  },
-
   watch:{
       $route: {
         handler (){
@@ -72,6 +73,12 @@ export default {
         },
         deep: true
       }
+  },
+
+  computed : {
+    credentials(){
+      return this.$store.getters.getCredentials;
+    }
   },
 }
 </script>

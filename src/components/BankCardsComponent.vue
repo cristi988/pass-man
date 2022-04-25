@@ -5,9 +5,9 @@
         <h2 class="text-4xl">Bank Cards</h2>
       </div>
       <div class="right ">
-        <button v-on:click="addBankCards()" class="bg-indigo-400 h-12 w-12 rounded-full text-white text-4xl
-        justify-center flex items-center ">
-          <i class="bi bi-plus"></i>
+        <button v-on:click="addBankCards()" class="bg-indigo-400 h-12 w-44 rounded-full text-white text-xl
+        justify-center flex items-center ">Add Card
+          <i class="bi bi-plus text-4xl"></i>
         </button>
       </div>
     </div>

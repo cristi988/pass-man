@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto 2xl:w-1/4 lg:w-1/3 md:w-1/2 w-full p-2 ">
+  <div class="mx-auto 2xl:w-96 lg:w-1/3 md:w-2/2 w-full p-2 ">
     <div class="card rounded-lg p-2 relative ">
 
       <div class="flex flex-row justify-between items-center">
@@ -10,12 +10,12 @@
       </div>
 
       <section class="mt-3">
-        <div class=" rounded bg-white flex justify-between flex-row">
+        <div class=" rounded bg-white flex justify-between flex-row break-words">
           <div class="py-3 p-1" >
             <p>Holder Name</p>
           </div>
-          <div class="py-3 p-1" >
-            <p >{{ details.name }}</p>
+          <div class="py-3 p-1 " >
+            {{ details.name }}
           </div>
         </div>
 
@@ -24,7 +24,7 @@
             <p>Expire Data</p>
           </div>
           <div class="py-3 p-2" >
-            <p >{{details.expireDate}}</p>
+            {{details.expireDate}}
           </div>
         </div>
 
@@ -39,7 +39,7 @@
             <p>Card Number</p>
           </div>
           <div class="py-3 p-2" >
-            <p>{{details.cardNumber}}</p>
+            {{details.cardNumber}}
           </div>
         </div>
 
@@ -48,7 +48,7 @@
             <p>Short Code</p>
           </div>
           <div class="py-3 p-2" >
-            <p>{{details.shortCode}}</p>
+            {{details.shortCode}}
           </div>
         </div>
 
@@ -57,7 +57,7 @@
             <p>Account number</p>
           </div>
           <div class="py-3 p-2" >
-            <p>{{details.accountNumber}}</p>
+            {{details.accountNumber}}
           </div>
         </div>
 
@@ -66,16 +66,16 @@
             <p>CCV</p>
           </div>
           <div class="py-3 p-2" >
-            <p>{{details.ccv}}</p>
+            {{details.ccv}}
           </div>
         </div>
 
         <div class="flex justify-between mt-2">
-          <button  class="w-3/12  py-1 bg-sky-500 rounded-full h-12">
-            <i class="bi bi-eye-slash text-white flex justify-center" style="font-size: 25px;"></i>
+          <button  class="w-3/12  py-1 bg-sky-400 rounded-full h-12 hover:bg-sky-500">
+            <i class="bi bi-eye-slash text-white flex justify-center text-2xl" ></i>
           </button>
-          <button  class="w-3/12  py-1 bg-red-600 rounded-full h-12" @click="deleteCard()">
-            <i class="bi bi-trash text-white flex justify-center" style="font-size: 25px;"></i>
+          <button  class="w-3/12  py-1 bg-red-500 rounded-full h-12 hover:bg-red-600" @click="deleteCard()">
+            <i class="bi bi-trash text-white flex justify-center text-2xl" ></i>
           </button>
         </div>
       </section>
@@ -98,8 +98,7 @@ export default {
   },
 
   methods : {
-    deleteCard(){
-      console.log(this.$confirm)
+    deleteCard() {
       this.$confirm(
           {
             message: 'Are you sure?',
@@ -115,15 +114,15 @@ export default {
               if (confirm) {
                 this.$store.dispatch('deleteBankDetails', this.id)
                 this.$toast.success("Your card has been deleted", {
-                  timeout : 2000,
+                  timeout: 2000,
                   position: "bottom-right",
                 })
               }
             }
           }
       )
-
     },
+
 
   }
 }
