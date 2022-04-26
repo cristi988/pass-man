@@ -1,5 +1,5 @@
 <template>
-  <div class="backdrop-blur-xl pt-20  bg-black bg-opacity-80 fixed w-full h-full ">
+  <div class="backdrop-blur-xl pt-20  bg-black bg-opacity-80 flex justify-center fixed top-0 left-0 w-full h-full ">
     <div class="form border border-gray-100 bg-gray-200 p-7 sm:w-6/12 w-5/12 mx-auto mt-8 rounded">
       <h1 class="text-4xl">Upload a personal file</h1>
       <hr class="mt-3">
@@ -36,7 +36,7 @@ export default {
 
   methods : {
     closeForm(){
-      this.$router.push({name:this.$route.name, query : {  }})
+      this.$router.push({path:'/files'})
     },
   }
 }

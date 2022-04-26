@@ -1,5 +1,5 @@
 <template>
-  <div class="backdrop-blur-xl pt-20  bg-black bg-opacity-80 fixed w-full h-full">
+  <div class="backdrop-blur-xl pt-20  bg-black bg-opacity-80 flex justify-center fixed top-0 left-0 w-full h-full">
     <div class="bankCard rounded-xl bg-white mt-20 border border-gray-300 w-5/12 mx-auto">
       <div class="flex justify-start items-center mt-2 text-2xl font-medium">
         <h1 class=" px-3  mt-2">Create New Bank Card</h1>
@@ -95,7 +95,7 @@ export default {
 
   methods : {
     closeForm() {
-      this.$router.push({name:this.$route.name, query : { }})
+      this.$router.push({path:'/cards'})
     },
 
     addBankCards() {

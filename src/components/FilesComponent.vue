@@ -68,11 +68,7 @@ export default {
 
   methods : {
     addFiles(){
-      if(!this.$route.query.add){
-        this.$router.push({name:this.$route.name, query : { add : true }})
-      }else{
-        this.$router.push({name:this.$route.name, query : {  }})
-      }
+      this.$router.push({path:'/files/add'})
     },
 
     changeRoute(status){

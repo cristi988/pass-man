@@ -23,8 +23,7 @@
           v-bind:id="index"
           v-bind:details="bankCard"/>
     </div>
-
-    <BankCardsForm v-if="addNew" class="flex justify-center fixed top-0 left-0 "/>
+    <router-view></router-view>
   </div>
 
 </template>
@@ -48,11 +47,7 @@ export default {
 
   methods : {
     addBankCards(){
-      if(!this.$route.query.add){
-        this.$router.push({name:this.$route.name, query : { add : true }})
-      }else{
-        this.$router.push({name:this.$route.name, query : {  }})
-      }
+      this.$router.push({path:'/cards/add'})
     },
 
     changeRoute(status){

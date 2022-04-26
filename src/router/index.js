@@ -6,15 +6,13 @@ import CardsComponent from '../components/BankCardsComponent.vue';
 import FilesComponent from '../components/FilesComponent.vue';
 import SettingsComponent from '../components/SettingsComponent.vue';
 import ContactsComponent from "@/components/ContactsComponent";
-import CredentialComponent from "@/components/Empty Route/CredentialComponent";
 import CredentialForm from "@/components/Forms/CredentialForm";
-import BankCardComponent from "@/components/Empty Route/BankCardComponent";
 import LoginPage from '@/components/LoginPageComponent';
-import FileComponent from "@/components/Empty Route/FileComponent";
-import ContactComponent from "@/components/Empty Route/ContactComponent";
-import SettingsForm from "@/components/Forms/PasswordForm";
 import PasswordForm from "@/components/Forms/PasswordForm";
-
+import BankCardsForm from "@/components/Forms/BankCardsForm";
+import FilesForm from "@/components/Forms/FilesForm";
+import ContactsForm from "@/components/Forms/ContactsForm";
+import TokenComponent from "@/components/TokenComponent";
 
 Vue.use(VueRouter)
 
@@ -58,9 +56,10 @@ const routes = [
     props : true,
     children : [
       {
-        path : '/card/:id',
-        component : BankCardComponent ,
+        path:'add',
+        component:BankCardsForm,
       },
+
     ]
   },
 
@@ -71,8 +70,8 @@ const routes = [
     props : true,
     children : [
       {
-        path : '/file/:id',
-        component : FileComponent,
+        path : 'add',
+        component : FilesForm,
       },
     ]
   },
@@ -84,8 +83,8 @@ const routes = [
     props : true,
     children : [
       {
-        path : '/contact/:id',
-        component : ContactComponent,
+        path : 'add',
+        component : ContactsForm,
       },
     ]
   },
@@ -103,7 +102,7 @@ const routes = [
       },
       {
         path: 'token',
-        // component: TokenForm,
+        component: TokenComponent,
       }
     ]
   },

@@ -23,7 +23,7 @@
           <div class="py-3 p-2" >
             <p>Expire Data</p>
           </div>
-          <input type="password" class="py-3 p-2" v-bind:value="details.expireDate"  disabled>
+          <p>{{details.expireDate}}</p>
         </div>
 
         <button class="w-20 " v-on:click="cardOpen=!cardOpen" >
@@ -33,43 +33,35 @@
 
       <section v-if="cardOpen" class="">
         <div class=" rounded bg-white flex justify-between flex-row mt-2">
-          <div class="py-3 p-2" >
+          <div class="py-3 p-2 " >
             <p>Card Number</p>
           </div>
-          <div class="py-3 p-2" >
-            {{details.cardNumber}}
-          </div>
+          <input :type="type" class="py-3 p-2 bg-white text-right" v-bind:value="details.cardNumber"  disabled>
         </div>
 
         <div class=" rounded bg-white flex justify-between flex-row mt-2">
           <div class="py-3 p-2" >
             <p>Short Code</p>
           </div>
-          <div class="py-3 p-2" >
-            {{details.shortCode}}
-          </div>
+          <input :type="type" class="py-3 p-2 bg-white text-right" v-bind:value="details.shortCode"  disabled>
         </div>
 
         <div class=" rounded bg-white flex justify-between flex-row mt-2">
           <div class="py-3 p-2" >
             <p>Account number</p>
           </div>
-          <div class="py-3 p-2" >
-            {{details.accountNumber}}
-          </div>
+          <input :type="type" class="py-3 p-2 bg-white text-right" v-bind:value="details.accountNumber"  disabled>
         </div>
 
         <div class=" rounded bg-white flex justify-between flex-row mt-2">
           <div class="py-3 p-2" >
             <p>CCV</p>
           </div>
-          <div class="py-3 p-2" >
-            {{details.ccv}}
-          </div>
+          <input :type="type" class="py-3 p-2 bg-white text-right" v-bind:value="details.ccv"  disabled>
         </div>
 
         <div class="flex justify-between mt-2">
-          <button  class="w-3/12  py-1 bg-sky-400 rounded-full h-12 hover:bg-sky-500">
+          <button  class="w-3/12  py-1 bg-sky-400 rounded-full h-12 hover:bg-sky-500" @click="showPassword()">
             <i class="bi bi-eye-slash text-white flex justify-center text-2xl" ></i>
           </button>
           <button  class="w-3/12  py-1 bg-red-500 rounded-full h-12 hover:bg-red-600" @click="deleteCard()">
@@ -92,6 +84,7 @@ export default {
   data : ()=> {
     return  {
       cardOpen : false,
+      type : 'password'
     }
   },
 
@@ -121,7 +114,13 @@ export default {
       )
     },
 
-
+    showPassword(){
+      if(this.type === "password"){
+        this.type = "text"
+      }else{
+        this.type = "password"
+      }
+    },
   }
 }
 </script>
