@@ -10,7 +10,7 @@
         justify-center flex items-center ">Add Credential
           <i class="bi bi-plus text-3xl flex justify-centre "></i>
         </button>
-        <button v-on:click="addCredentials()" class=" ml-2 bg-indigo-400 h-12 w-52 rounded-full text-white text-xl
+        <button class=" ml-2 bg-indigo-400 h-12 w-52 rounded-full text-white text-xl
         justify-center flex items-center ">Upload List
           <i class="bi bi-cloud-arrow-up text-4xl flex justify-centre ml-2"></i>
         </button>
@@ -29,8 +29,11 @@
           v-bind:id="index"
           v-for="(credential, index) in credentials"/>
     </div>
+    <div class="border border-black ">
+      <router-view></router-view>
+    </div>
 
-    <CredentialForm v-if="addNew" class="flex justify-center fixed top-0 left-0 "/>
+<!--    <CredentialForm v-if="addNew" class="flex justify-center fixed top-0 left-0 "/>-->
   </div>
 
 </template>
@@ -54,11 +57,13 @@ export default {
   },
   methods : {
     addCredentials(){
-      if(!this.$route.query.add){
-        this.$router.push({name:this.$route.name, query : { add : true }})
-      }else{
-        this.$router.push({name:this.$route.name, query : {  }})
-      }
+      // if(!this.$route.query.add){
+      //   this.$router.push({path:this.$route.name, query : { add : true }})
+      // }else{
+      //   this.$router.push({name:this.$route.name, query : {  }})
+      // }
+
+      this.$router.push({path:'/credentials/add'})
     },
 
     changeRoute(status){

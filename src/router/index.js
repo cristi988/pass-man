@@ -9,9 +9,11 @@ import ContactsComponent from "@/components/ContactsComponent";
 import CredentialComponent from "@/components/Empty Route/CredentialComponent";
 import CredentialForm from "@/components/Forms/CredentialForm";
 import BankCardComponent from "@/components/Empty Route/BankCardComponent";
-import LoginPage from '@/components/LoginPage';
+import LoginPage from '@/components/LoginPageComponent';
 import FileComponent from "@/components/Empty Route/FileComponent";
 import ContactComponent from "@/components/Empty Route/ContactComponent";
+import SettingsForm from "@/components/Forms/PasswordForm";
+import PasswordForm from "@/components/Forms/PasswordForm";
 
 
 Vue.use(VueRouter)
@@ -33,15 +35,19 @@ const routes = [
   },
 
   {
-    path : '/credentials',
+    path : '/credentials/:id?',
     component : CredentialsComponent,
     name: 'credentials',
     props : true,
     children : [
       {
-        path : '/credential/:id',
-        component : CredentialComponent,
+        path : 'update',
+        component : CredentialForm,
       },
+      {
+        path : 'add',
+        component: CredentialForm,
+      }
     ]
   },
 
@@ -72,11 +78,6 @@ const routes = [
   },
 
   {
-    path : '/settings',
-    component : SettingsComponent,
-  },
-
-  {
     path : '/contacts',
     component: ContactsComponent,
     name: 'contacts',
@@ -87,7 +88,24 @@ const routes = [
         component : ContactComponent,
       },
     ]
-  }
+  },
+
+  {
+    path : '/settings',
+    component : SettingsComponent,
+    name : 'settings',
+    props : true,
+    children : [
+      {
+        path: 'password',
+        component: PasswordForm,
+      },
+      {
+        path: 'token',
+        // component: TokenForm,
+      }
+    ]
+  },
 
 
 ]

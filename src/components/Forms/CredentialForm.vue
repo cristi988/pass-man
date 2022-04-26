@@ -1,5 +1,5 @@
 <template>
-  <div class="backdrop-blur-xl pt-20  bg-black bg-opacity-80 fixed w-full h-full">
+  <div class="backdrop-blur-xl pt-20  bg-black bg-opacity-80 flex justify-center fixed top-0 left-0  w-full h-full">
     <div class="credentialCard rounded-xl bg-white mt-20 border border-gray-300 w-5/12 mx-auto">
       <div class="flex justify-start items-center mt-2 text-2xl font-medium">
         <h1 class=" px-3  mt-2">Create New Credential</h1>
@@ -67,7 +67,7 @@ export default {
 
   methods : {
     closeForm(){
-      this.$router.push({name:this.$route.name, query : {  }}).catch(()=>{})
+      this.$router.push({path:'/credentials'})
     },
 
     addCredentials() {
@@ -75,7 +75,7 @@ export default {
       this.closeForm();
     },
     update() {
-      this.$router.push({name:'credentials'}).catch(()=>{});
+      this.$router.push({path:'/credentials/'})
     }
 
 
@@ -88,14 +88,13 @@ export default {
     if(this.$route.params.id){
       this.edit = true;
       let credential = this.$store.getters.getCredentials.filter((item, id)=>{
-        return id == this.$route.params.id
+        return id === Number(this.$route.params.id)
       })
       this.credentials = credential[0]
     }
   },
 
   destroyed(){
-    console.log('destroyed')
   },
 
 }

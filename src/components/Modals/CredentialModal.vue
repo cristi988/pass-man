@@ -44,9 +44,8 @@
             </section>
                
             <section class="details" v-if=cardOpen>
-
                 <p class="h-auto py-4 pl-1 pt-3
-                flex items-center justify-center
+                  flex items-center justify-center
                   my-5 w-full
                   bg-white
                   rounded-md
@@ -55,7 +54,6 @@
                   resize-none" >
                   {{ details.tag }}
                 </p>
-
                 <div class="flex justify-between">
                   <button  class="w-3/12 py-1 hover:bg-sky-500 bg-sky-400  rounded-full">
                     <i class="bi bi-pencil text-white text-2xl"  @click="edit(id)"></i>
@@ -93,7 +91,8 @@ export default {
 
   methods: {
     edit(id) {
-      this.$router.push(`credential/${id}`)
+      // this.$router.push({name:'credentials', params: {id : id}})
+      this.$router.replace({path:`/credentials/${id}/update`, params: {id : id}})
     },
 
     deleteCredentials(){

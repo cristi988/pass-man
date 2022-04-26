@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue'
-import LeftMenu from './components/LeftMenu.vue'
-import LoginPage from './components/LoginPage.vue'
+import NavBar from './components/NavBarComponent.vue'
+import LeftMenu from './components/LeftMenuComponent.vue'
+import LoginPage from './components/LoginPageComponent.vue'
 export default {
   components : {
     NavBar,
