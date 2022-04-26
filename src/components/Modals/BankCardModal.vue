@@ -23,9 +23,7 @@
           <div class="py-3 p-2" >
             <p>Expire Data</p>
           </div>
-          <div class="py-3 p-2" >
-            {{details.expireDate}}
-          </div>
+          <input type="password" class="py-3 p-2" v-bind:value="details.expireDate"  disabled>
         </div>
 
         <button class="w-20 " v-on:click="cardOpen=!cardOpen" >

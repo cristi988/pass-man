@@ -7,21 +7,21 @@
       </div>
     </div>
     <!-- buttons for change password and API token-->
-    <div class="flex mt-2 text-sky-500 hover:text-sky-700 border-b">
-      <router-link to="settings/password">
-        <button class="mr-3">
+    <div class="flex mt-2  border-b">
+      <router-link to="/settings">
+        <button class="mr-3 text-sky-500 hover:text-sky-700">
           <a href="">Change Password</a>
         </button>
       </router-link>
-      <router-link to="settings/token">
-        <button class="ml-20">
+
+      <router-link to="/settings/token">
+        <button class="ml-20 text-sky-500 hover:text-sky-700">
           <a href="">Your API Token</a>
         </button>
       </router-link>
     </div>
-    <div class="">
-      <router-view></router-view>
-    </div>
+
+    <router-view></router-view>
 
   </div>
 </template>

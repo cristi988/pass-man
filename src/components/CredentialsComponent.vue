@@ -29,7 +29,7 @@
           v-bind:id="index"
           v-for="(credential, index) in credentials"/>
     </div>
-    <div class="border border-black ">
+    <div class="">
       <router-view></router-view>
     </div>
 

@@ -11,14 +11,14 @@
                 </div>
 
             <section class="card-body mt-6 relative ">
-                <div class=" rounded-full bg-white flex justify-between flex-row p-1">
-                    <div class="hi w-12 h-12  rounded-full flex justify-center items-center">
+                <div class=" rounded-full bg-white flex justify-between items-center flex-row p-1 ">
+                    <div class="hi w-10 h-10  rounded-full flex justify-center items-center ">
                         <i class="bi bi-person text-white" style="font-size: 20px;"></i>
                     </div>
                     <div class="py-3" >
                         <p >{{ details.username }}</p>
                     </div>
-                    <button class="hy w-12 h-12 rounded-full flex justify-center items-center">
+                    <button class="hy w-10 h-10 rounded-full flex justify-center items-center">
                         <i class="bi bi-files text-white" style="font-size: 20px;"></i>
                     </button>
                     
