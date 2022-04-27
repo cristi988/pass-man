@@ -33,7 +33,7 @@ export default new Vuex.Store({
     },
 
     getContacts(state){
-      return state.contacts;
+      return [...state.contacts];
     },
   },
 

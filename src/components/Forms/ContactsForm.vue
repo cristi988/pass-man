@@ -31,8 +31,13 @@
 
 
       <div class="flex justify-between mt-5 py-2 px-3">
-        <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500" @click="addContact()">
+        <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500"
+                @click="addContact()" v-if="!edit">
           <i class="bi bi-send flex justify-center" ></i>
+        </button>
+        <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500"
+                @click="update()" v-if="edit">
+          <i class="bi bi-pencil flex justify-center" ></i>
         </button>
         <button class="border bg-rose-400 border text-2xl rounded-xl w-24 h-12 text-white hover:bg-rose-500"
                 @click="closeForm()">
@@ -56,6 +61,7 @@ export default {
         phone : '',
         note : '',
       },
+      edit : false,
 
     }
   },
@@ -76,11 +82,11 @@ export default {
   },
 
   mounted () {
-    if(this.$store.getters.getContacts){
-      this.contacts = this.$store.getters.getContacts
+    if(this.$store.getters.getContactsEdit){
+      this.contacts = this.$store.getters.getContactsEdit
     }
     if(this.$route.params.id){
-      this.editContact = true;
+      this.edit = true;
       let contact = this.$store.getters.getContacts.filter((item, id)=>{
         return id === Number(this.$route.params.id)
       })

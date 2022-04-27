@@ -78,8 +78,8 @@ export default {
   },
 
   mounted (){
-    if(this.$store.getters.getCredentialsEdit){
-      this.credentials = this.$store.getters.getCredentialsEdit
+    if(this.$store.getters.getCredentials){
+      this.credentials = this.$store.getters.getCredentials
     }
     if(this.$route.params.id){
       this.edit = true;
