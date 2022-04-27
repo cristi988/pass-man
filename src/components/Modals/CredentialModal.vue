@@ -1,39 +1,37 @@
 <template>
 
-    <div class=" 2xl:w-1/4 lg:w-1/3 md:w-1/2 w-full p-2 mx-auto ">
+    <div class="w-2/6 p-2 mx-auto ">
         <div class="card rounded-lg p-2 relative ">
-
             <div class="flex flex-row justify-between items-center">
                 <div class=" rounded-full border-slate-300 border border-gray-500 inline-flex p-2">
                     <img :src="d" class="w-12" >
                 </div>          
                 <h3 class=" text-xl w-full"> {{details.target}} </h3>
                 </div>
-
             <section class="card-body mt-6 relative ">
-                <div class=" rounded-full bg-white flex justify-between items-center flex-row p-1 ">
-                    <div class="hi w-10 h-10  rounded-full flex justify-center items-center ">
-                        <i class="bi bi-person text-white" style="font-size: 20px;"></i>
+                <div class=" rounded bg-white flex justify-between items-center flex-row p-1 ">
+                    <div class="hi w-10 h-10  rounded flex justify-center items-center ">
+                        <i class="bi bi-person  text-xl text-white" ></i>
                     </div>
                     <div class="py-3" >
                         <p >{{ details.username }}</p>
                     </div>
-                    <button class="hy w-10 h-10 rounded-full flex justify-center items-center">
-                        <i class="bi bi-files text-white" style="font-size: 20px;"></i>
+                    <button class="hy w-10 h-10 rounded flex justify-center items-center">
+                        <i class="bi bi-files text-xl text-white"></i>
                     </button>
                     
                 </div>
 
-                <div class=" w-100 rounded-full bg-white flex justify-between flex-row p-1 my-2">
-                    <div class="hi w-12 h-12   rounded-full flex justify-center items-center">
-                        <i class="bi bi-key text-white" style="font-size: 20px;"></i>
+                <div class=" w-100 rounded bg-white flex justify-between items-center flex-row p-1 my-2">
+                    <div class="hi w-10 h-10   rounded flex justify-center items-center">
+                        <i class="bi bi-key text-xl text-white"></i>
                     </div>
                     <div class="py-3" >
-                        <p >{{ details.password }}</p>
+                      <input type="password" class="bg-white text-center" v-model:value="details.password" disabled>
                     </div>
-                    <button class="hy w-12 h-12  rounded-full flex justify-center
+                    <button class="hy w-10 h-10  rounded flex justify-center
                     items-center ">
-                        <i class="bi bi-files text-white" style="font-size: 20px;"></i>
+                        <i class="bi bi-files text-xl text-white"></i>
                     </button>
                 </div>
                 <button class="w-20 text-gray-600" v-on:click="cardOpen=!cardOpen" >
@@ -55,8 +53,8 @@
                   {{ details.tag }}
                 </p>
                 <div class="flex justify-between">
-                  <button  class="w-3/12 py-1 hover:bg-sky-500 bg-sky-400  rounded-full">
-                    <i class="bi bi-pencil text-white text-2xl"  @click="edit(id)"></i>
+                  <button  class="w-3/12 py-1 hover:bg-sky-500 bg-sky-400  rounded-full" @click="edit(id)">
+                    <i class="bi bi-pencil text-white text-2xl"></i>
                   </button>
                   <button class="w-3/12 py-1 hover:bg-red-500 bg-red-400  rounded-full flex justify-center items-center"
                           @click="deleteCredentials()">
@@ -91,7 +89,6 @@ export default {
 
   methods: {
     edit(id) {
-      // this.$router.push({name:'credentials', params: {id : id}})
       this.$router.replace({path:`/credentials/${id}/update`, params: {id : id}})
     },
 
@@ -128,19 +125,19 @@ export default {
 <style>
  .card {
    /*background-color: #EFF2DC;*/
-   background-color: #D4DAD6;
+   background-color: #EFF2DC;
  }
 
  .hi {
-   background-color: #94A69F;
+   background-color: #D9E0AD;
  }
 
  .hy {
-   background-color: #758C83;
+   background-color: #B1C055;
  }
 
  .hy:hover {
-   background-color: #566760;
+   background-color: #565E23;
  }
 </style>
 

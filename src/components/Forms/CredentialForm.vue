@@ -10,25 +10,21 @@
         <input type="text" placeholder="Target" class="w-full py-4 h-full" v-model="credentials.target">
       </div>
 
-
       <div class="flex justify-around w-full h-14 border-t">
         <i class="bi bi-person-circle text-2xl w-2/12 flex justify-center items-center"></i>
         <input type="text" placeholder="Username" class="w-full" v-model="credentials.username">
       </div>
-
 
       <div class="flex justify-around w-full h-14 border-t">
         <i class="bi bi-key text-2xl w-2/12 flex justify-center items-center"></i>
         <input type="text" placeholder="Password" class="w-full" v-model="credentials.password">
       </div>
 
-
       <div class="flex justify-around items-center w-full h-20 border-b border-t py-2">
         <i class="bi bi-journal text-2xl w-2/12  flex justify-center mb-2.5"></i>
         <textarea class="w-full resize-none pt-3 outline-none ml-3" placeholder="Tag" v-model="credentials.tag">
         </textarea>
       </div>
-
 
       <div class="flex justify-between px-3 mt-7">
         <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500"
@@ -92,9 +88,6 @@ export default {
       })
       this.credentials = credential[0]
     }
-  },
-
-  destroyed(){
   },
 
 }

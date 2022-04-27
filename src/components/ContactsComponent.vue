@@ -5,8 +5,8 @@
         <h2 class="text-4xl">Contacts</h2>
       </div>
       <div class="right ">
-        <button v-on:click="addContacts()" class="bg-indigo-400 h-12 w-12 rounded-full text-white text-4xl
-        justify-center flex items-center ">
+        <button v-on:click="addContacts()" class="bg-indigo-400 h-12 w-44 rounded-full text-white text-3xl
+        justify-center flex items-center "> Add
           <i class="bi bi-plus"></i>
         </button>
       </div>
@@ -25,7 +25,12 @@
     </div>
     <hr class="mt-2">
 
-    <ContactModal v-bind="test"/>
+    <ContactModal
+        v-bind:contactDetails="contact"
+        v-bind:key="index"
+        v-bind:id="index"
+        v-for="(contact, index) in contacts" class="border-b"/>
+
     <router-view></router-view>
 
   </div>
@@ -45,7 +50,6 @@ export default {
 
   data(){
     return {
-      test : true,
       addNew : false,
     }
   },
@@ -67,6 +71,12 @@ export default {
       deep: true
     }
   },
+
+  computed : {
+    contacts(){
+      return this.$store.getters.getContacts;
+    }
+  }
 }
 </script>
 

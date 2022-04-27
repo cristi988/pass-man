@@ -21,7 +21,7 @@
 
         <div class=" rounded bg-white flex justify-between flex-row mt-2">
           <div class="py-3 p-2" >
-            <p>Expire Data</p>
+            <p>Expiryd Data</p>
           </div>
           <p>{{details.expireDate}}</p>
         </div>
@@ -41,7 +41,7 @@
 
         <div class=" rounded bg-white flex justify-between flex-row mt-2">
           <div class="py-3 p-2" >
-            <p>Short Code</p>
+            <p>Sort Code</p>
           </div>
           <input :type="type" class="py-3 p-2 bg-white text-right" v-bind:value="details.shortCode"  disabled>
         </div>

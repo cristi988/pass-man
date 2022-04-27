@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="border border-gray-100 bg-gray-100 p-7 mx-auto mt-8 rounded">
-      <h1 class="text-4xl">Upload a personal file</h1>
+      <h1 class="text-4xl">Token</h1>
       <hr class="mt-3">
       <div class="mb-3 px-2 mt-5">
         <label class="flex">Email</label>

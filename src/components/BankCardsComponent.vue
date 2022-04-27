@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="search-bar">
-      <input placeholder="Searchbar" type="text" class="border border-gray-400 rounded w-full mt-5 h-10 px-2 outline-0">
+      <input v-on:keyup="searchCard($event)" placeholder="Searchbar" type="text" class="border border-gray-400 rounded w-full mt-5 h-10 px-2 outline-0">
     </div>
     <hr class="mt-5">
 
@@ -52,6 +52,10 @@ export default {
 
     changeRoute(status){
       this.addNew = status
+    },
+
+    searchCard(event){
+      this.$store.commit('setSearchTerm', event.target.value)
     }
   },
     watch:{

@@ -1,6 +1,5 @@
 <template>
   <div class="mx-auto py-3 w-10/12 float-right lg:float-none lg:w-10/12 md:float-none">
-
     <div class="title flex justify-between">
       <div class="left">
         <h2 class="text-4xl">Credentials</h2>
@@ -18,7 +17,10 @@
     </div>
 
     <div class="search-bar">
-      <input placeholder="Searchbar" type="text" class="border border-gray-400 rounded w-full mt-5 h-10 px-2 outline-0">
+      <input placeholder="Searchbar"
+             v-on:keyup="searchCredential($event)"
+             type="search"
+             class="border border-gray-400 rounded w-full mt-5 h-10 px-2 outline-0">
     </div>
 
     <hr class="my-5">
@@ -29,13 +31,8 @@
           v-bind:id="index"
           v-for="(credential, index) in credentials"/>
     </div>
-    <div class="">
       <router-view></router-view>
-    </div>
-
-<!--    <CredentialForm v-if="addNew" class="flex justify-center fixed top-0 left-0 "/>-->
   </div>
-
 </template>
 
 <script>
@@ -55,20 +52,20 @@ export default {
       addNew : false
    }
   },
+
   methods : {
     addCredentials(){
-      // if(!this.$route.query.add){
-      //   this.$router.push({path:this.$route.name, query : { add : true }})
-      // }else{
-      //   this.$router.push({name:this.$route.name, query : {  }})
-      // }
-
-      this.$router.push({path:'/credentials/add'})
+     this.$router.push({path:'/credentials/add'})
     },
 
     changeRoute(status){
       this.addNew = status
+    },
+
+    searchCredential(event) {
+      this.$store.commit('setSearchTerm', event.target.value)
     }
+
   },
 
   watch:{
@@ -83,7 +80,8 @@ export default {
   computed : {
     credentials(){
       return this.$store.getters.getCredentials;
-    }
+    },
+
   },
 }
 </script>

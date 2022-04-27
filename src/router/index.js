@@ -39,12 +39,12 @@ const routes = [
     props : true,
     children : [
       {
-        path : 'update',
-        component : CredentialForm,
+        path:'update',
+        component:CredentialForm,
       },
       {
-        path : 'add',
-        component: CredentialForm,
+        path:'add',
+        component:CredentialForm,
       }
     ]
   },
@@ -70,21 +70,25 @@ const routes = [
     props : true,
     children : [
       {
-        path : 'add',
-        component : FilesForm,
+        path:'add',
+        component:FilesForm,
       },
     ]
   },
 
   {
-    path : '/contacts',
-    component: ContactsComponent,
-    name: 'contacts',
-    props : true,
-    children : [
+    path:'/contacts/:id?',
+    component:ContactsComponent,
+    name:'contacts',
+    props:true,
+    children:[
       {
-        path : 'add',
-        component : ContactsForm,
+        path:'update',
+        component:ContactsForm
+      },
+      {
+        path:'add',
+        component:ContactsForm,
       },
     ]
   },
