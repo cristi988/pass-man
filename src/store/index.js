@@ -10,8 +10,26 @@ export default new Vuex.Store({
     bankDetails :[],
     contacts : [],
     searchTerm : '',
+    credentialsEdit : [],
+    contactEdit : [],
   },
   getters: {
+    getCredentialsEdit(state){
+      if(state.credentialsEdit){
+        return {...state.credentials[state.credentialsEdit]}
+      }else{
+        return null
+      }
+    },
+
+    getContactsEdit(state){
+      if(state.contactEdit){
+        return {...state.contacts[state.contactEdit]}
+      }else{
+        return null
+      }
+    },
+
     getCredentials(state){
       // return [...state.credentials];
       return state.credentials.filter((credential)=>{

@@ -1,11 +1,11 @@
 <template>
-  <div class="flex-row">
+  <div class="">
     <div class="columns-5 mt-5">
-      <p> {{ contactDetails.firstName}} </p>
+      <p> {{ contactDetails.firstName }} {{contactDetails.lastName}} </p>
       <p> {{ contactDetails.email }} </p>
       <p> {{ contactDetails.phone }} </p>
-      <p class=" "> {{contactDetails.note}} </p>
-      <div class="dropdown inline-block relative ">
+      <p class=" w-96 "> {{contactDetails.note}} </p>
+      <div class="dropdown inline-block relative mb-1 ">
         <button class="bg-slate-300 rounded w-20">...</button>
         <div class="dropdown-content hidden absolute w-28 overflow-auto border rounded ">
           <button class="block text-black p-1 decoration-0 flex justify-start w-full hover:bg-gray-200" @click="deleteContact()">
