@@ -32,13 +32,16 @@ export default new Vuex.Store({
 
     getCredentials(state){
       // return [...state.credentials];
-      return state.credentials.filter((credential)=>{
-        if((credential.tag.toLowerCase().includes(state.searchTerm)) ||
-            (credential.username.toLowerCase().includes(state.searchTerm)) ||
-            (credential.target.toLowerCase().includes(state.searchTerm))){
-          return credential;
-        }
-      })
+      if(state.credentials.length > 0){
+        return state.credentials.filter((credential)=>{
+          if((credential.tag.toLowerCase().includes(state.searchTerm)) ||
+              (credential.username.toLowerCase().includes(state.searchTerm)) ||
+              (credential.target.toLowerCase().includes(state.searchTerm))){
+            return credential;
+          }
+        })
+      }
+      return null;
     },
 
     getBankDetails(state){

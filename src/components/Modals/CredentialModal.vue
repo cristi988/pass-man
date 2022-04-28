@@ -6,7 +6,7 @@
                 <div class=" rounded-full border-slate-300 border border-gray-500 inline-flex p-2">
                     <img :src="d" class="w-12" >
                 </div>          
-                <h3 class=" text-xl w-full"> {{details.target}} </h3>
+                <h3 class="text-xl w-full"> {{details.target}} </h3>
                 </div>
             <section class="card-body mt-6 relative ">
                 <div class=" rounded bg-white flex justify-between items-center flex-row p-1 ">
@@ -14,7 +14,7 @@
                         <i class="bi bi-person  text-xl text-white" ></i>
                     </div>
                     <div class="py-3" >
-                        <p >{{ details.username }}</p>
+                        <p>{{ details.username }}</p>
                     </div>
                     <button class="hy w-10 h-10 rounded flex justify-center items-center">
                         <i class="bi bi-files text-xl text-white"></i>

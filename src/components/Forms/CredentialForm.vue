@@ -27,8 +27,8 @@
       </div>
 
       <div class="flex justify-between px-3 mt-7">
-        <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500"
-                @click="addCredentials()" v-if="!edit">
+        <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500 disabled:bg-gray-400"
+                @click="addCredentials()" v-if="!edit" v-bind:disabled="!isValid">
           <i class="bi bi-send flex justify-center"></i>
         </button>
          <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500"
@@ -61,26 +61,24 @@ export default {
   },
 
 
-  methods : {
+  methods: {
     closeForm(){
       this.$router.push({path:'/credentials'})
     },
 
     addCredentials() {
+      if(!this.isValid){
+        return null;
+      }
       this.$store.commit('storeCredentials', this.credentials);
       this.closeForm();
     },
     update() {
       this.$router.push({path:'/credentials/'})
     }
-
-
   },
 
   mounted (){
-    if(this.$store.getters.getCredentialsEdit){
-      this.credentials = this.$store.getters.getCredentialsEdit
-    }
     if(this.$route.params.id){
       this.edit = true;
       let credential = this.$store.getters.getCredentials.filter((item, id)=>{
@@ -89,6 +87,12 @@ export default {
       this.credentials = credential[0]
     }
   },
+
+  computed: {
+    isValid(){
+      return this.credentials.username && this.credentials.password && this.credentials.tag
+    }
+  }
 
 }
 </script>

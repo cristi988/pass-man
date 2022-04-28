@@ -4,7 +4,7 @@
       <h1 class="text-4xl">Token</h1>
       <hr class="mt-3">
       <div class="mb-3 px-2 mt-5">
-        <label class="flex">Email</label>
+        <label class="flex">Token</label>
         <input type="email" class="border border-gray-300 rounded h-12 w-full mt-2 px-1 bg-white" disabled>
       </div>
       <div class="px-2 mt-7">

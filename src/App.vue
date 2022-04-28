@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <vue-confirm-dialog></vue-confirm-dialog>
+<!--    <LoginPage></LoginPage>-->
     <!--NavBar-->
     <section>
       <NavBar/>

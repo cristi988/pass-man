@@ -96,13 +96,12 @@ const routes = [
   {
     path : '/settings',
     component : SettingsComponent,
-    name : 'settings',
-    // redirect : '/settings/password',
     props : true,
     children : [
       {
         path: '',
         component: PasswordForm,
+        name: 'passwordForm'
       },
       {
         path: 'token',

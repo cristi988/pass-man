@@ -66,7 +66,7 @@ export default {
     }
   },
 
-  methods : {
+  methods: {
     closeForm() {
       this.$router.push({path:'/contacts'})
     },
@@ -81,16 +81,17 @@ export default {
     }
   },
 
-  mounted () {
-    if(this.$store.getters.getContactsEdit){
-      this.contacts = this.$store.getters.getContactsEdit
-    }
-    if(this.$route.params.id){
+  mounted() {
+    if(this.$route.params.id && this.$store.getters.getContacts.length > 0){
       this.edit = true;
       let contact = this.$store.getters.getContacts.filter((item, id)=>{
         return id === Number(this.$route.params.id)
       })
       this.contacts = contact[0]
+
+    }
+    else if(this.$route.params.id && this.$store.getters.getContacts.length < 1){
+      this.closeForm()
     }
   },
 }
