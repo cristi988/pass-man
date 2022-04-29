@@ -5,31 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    menu : false,
-    credentials :[],
-    bankDetails :[],
-    contacts : [],
-    searchTerm : '',
-    credentialsEdit : [],
-    contactEdit : [],
+    menu: false,
+    showAlert: false,
+    cancelAlert: false,
+    credentials:[],
+    bankDetails:[],
+    contacts: [],
+    searchTerm: '',
+
   },
   getters: {
-    getCredentialsEdit(state){
-      if(state.credentialsEdit){
-        return {...state.credentials[state.credentialsEdit]}
-      }else{
-        return null
-      }
-    },
-
-    getContactsEdit(state){
-      if(state.contactEdit){
-        return {...state.contacts[state.contactEdit]}
-      }else{
-        return null
-      }
-    },
-
     getCredentials(state){
       // return [...state.credentials];
       if(state.credentials.length > 0){
@@ -65,6 +50,14 @@ export default new Vuex.Store({
 
     toggleMenu(state){
       state.menu = !state.menu;
+    },
+
+    showAlert(state){
+      state.showAlert = !state.showAlert;
+    },
+
+    cancelAlert(state){
+      state.cancelAlert = !state.cancelAlert;
     },
 
     storeCredentials(state, credential) {

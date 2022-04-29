@@ -6,8 +6,7 @@ import './main.css';
 import VueConfirmDialog from './components/ConfirmationDialog'
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
-
-
+Vue.use(VueConfirmDialog);
 Vue.config.productionTip = false
 Vue.use(VueConfirmDialog)
 Vue.component('vue-confirm-dialog', VueConfirmDialog.default)

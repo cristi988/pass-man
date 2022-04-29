@@ -1,9 +1,6 @@
 <template>
-  <div class="">
-    <div class="image h-screen ">
-      <img src="/public/images/2.jpg" alt="" class="">
-    </div>
-
+  <div class="image" >
+<!--    <img src="images/2.jpg" alt="" srcset="">-->
     <form class="">
       <div class="login bg-slate-50 ">
         <h1 class="text-6xl mt-5 ">Login</h1>
@@ -21,7 +18,7 @@
         </div>
 
         <div class="bg-gray-700 text-white rounded mt-5 w-9/12 h-10 text-2xl flex justify-center ml-12">
-           <router-link to="/login"><button class="w-full">Login</button></router-link>
+           <router-link to="/home"><button class="w-full">Login</button></router-link>
         </div>
 
         <div class="text-blue-300 rounded mt-2 h-10 mr-28">
@@ -35,14 +32,20 @@
 
 <script>
 export default {
-    name : 'LoginPage'
+  name : 'LoginPage',
+
+  methods: {
+
+  }
 }
 </script>
 
 <style lang="scss" scoped>
     .image {
-      background-image: url('/public/images/2.jpg');
+      background-image: url("/public/images/2.jpg");
       background-size: cover;
+      height: 100vh;
+      top: 0;
       background-position: center;
       background-repeat: no-repeat ;
     }

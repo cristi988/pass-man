@@ -19,12 +19,16 @@ Vue.use(VueRouter)
 const routes = [
   {
     path : '/',
-    redirect : '/home'
+    redirect : '/login'
   },
 
   {
     path : '/login',
     component : LoginPage,
+    name:'login',
+    meta: {
+      menu: true,
+    }
   },
 
   {

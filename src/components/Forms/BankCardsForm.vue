@@ -63,8 +63,8 @@
       </div>
 
       <div class="flex justify-between px-3 mt-7">
-        <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500"
-                @click="addBankCards()">
+        <button class="border bg-sky-400 rounded-xl text-2xl w-24 h-12 text-white hover:bg-sky-500 disabled:bg-gray-400"
+                @click="addBankCards()" v-bind:disabled="!isValid">
           <i class="bi bi-send flex justify-center"></i>
         </button>
         <button class="border bg-rose-400 text-2xl rounded-2xl w-24 h-12 text-white hover:bg-rose-500"
@@ -103,6 +103,13 @@ export default {
       this.closeForm();
     },
   },
+
+  computed : {
+    isValid(){
+      return this.bankDetails.name && this.bankDetails.expireDate && this.bankDetails.cardNumber &&
+        this.bankDetails.shortCode && this.bankDetails.accountNumber && this.bankDetails.ccv;
+    }
+  }
 
 }
 </script>

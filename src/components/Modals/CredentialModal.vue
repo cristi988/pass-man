@@ -57,68 +57,65 @@
                     <i class="bi bi-pencil text-white text-2xl"></i>
                   </button>
                   <button class="w-3/12 py-1 hover:bg-red-500 bg-red-400  rounded-full flex justify-center items-center"
-                          @click="deleteCredentials()">
+                          @click="deleteCredentials()" >
                     <i class="bi bi-trash text-white text-2xl flex justify-centre" ></i>
                   </button>
+
                   <button  class="w-3/12 py-1 hover:bg-yellow-500 bg-yellow-400   rounded-full">
                     <i class="bi bi-share text-white text-2xl" ></i>
                   </button>
                 </div>
             </section>
-        </div> 
+        </div>
     </div>
 </template>
 
 <script>
+import AlertComponent from "@/components/AlertComponent";
 export default {
   name: 'CardModal',
+
+  components : {
+    AlertComponent,
+  },
+
   props: {
     details: Object,
     id: Number,
+    type : 'credential'
   },
   data: () => {
     return {
       cardOpen: false,
     }
   },
-  computed: {
-    d() {
-      return '../images/target.png';
-    },
-  },
+
 
   methods: {
     edit(id) {
       this.$router.replace({path:`/credentials/${id}/update`, params: {id : id}})
     },
 
+    showAlert(){
+      this.$store.commit('showAlert');
+    },
+
     deleteCredentials(){
-      this.$confirm(
-          {
-            message: 'Are you sure?',
-            button: {
-              no: 'No',
-              yes: 'Yes'
-            },
-            /**
-             * Callback Function
-             * @param {Boolean} confirm
-             */
-            callback: confirm => {
-              if (confirm) {
-                this.$store.dispatch('deleteCredentials' , this.id)
-                this.$toast.success("Your card has been deleted", {
-                  timeout: 2000,
-                  position: "bottom-right",
-                })
-              }
-            }
-          }
-        )
+      this.showAlert();
+      this.cancleAlert();
+      this.$store.dispatch('deleteCredentials' , this.id)
+    },
+
+    cancleAlert(){
+      this.$store.commit('cancleAlert')
     }
   },
 
-
+  computed: {
+    d() {
+      return '../images/target.png';
+    },
+  },
 }
 </script>
 

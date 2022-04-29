@@ -1,32 +1,33 @@
 <template>
   <div id="app">
-    <vue-confirm-dialog></vue-confirm-dialog>
-<!--    <LoginPage></LoginPage>-->
-    <!--NavBar-->
+
     <section>
-      <NavBar/>
+      <NavBar v-if="!$route.meta.menu"/>
     </section>
     <!--End NavBar-->
 
     <!--Left menu-->
-    <LeftMenu class=" z-50 fixed "/>
+    <LeftMenu class=" z-50 fixed" v-if="!$route.meta.menu"/>
     <!--End Left menu-->
-    <div class="container mx-auto">
-      <router-view ></router-view>
+
+    <div class="container mx-auto" >
     </div>
-  </div>       
+    <router-view></router-view>
+  </div>
+
 </template>
 
 <script>
 import NavBar from './components/NavBarComponent.vue'
 import LeftMenu from './components/LeftMenuComponent.vue'
 import LoginPage from './components/LoginPageComponent.vue'
+import AlertComponent from "@/components/AlertComponent";
 export default {
   components : {
+    AlertComponent,
     NavBar,
     LeftMenu,
     LoginPage,
-
   },
 
   data(){
@@ -41,10 +42,15 @@ export default {
     }
   },
 
+  methods : {
+
+  },
+
   computed : {
     menu(){
       return this.$store.state.menu
-    }
+    },
+
   } 
 }
 </script>
