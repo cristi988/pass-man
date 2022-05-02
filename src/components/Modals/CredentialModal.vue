@@ -98,7 +98,7 @@ export default {
 
     deleteCredentials(){
       // this.$store.dispatch('deleteCredentials' , this.id)
-      this.$store.commit('showAlert', {state:true, parent :'credentials', child:this.id})
+      this.$store.commit('showAlert', {state:true, parent :'credentials', child:this.id},)
     },
 
   },

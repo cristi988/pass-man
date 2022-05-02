@@ -45,6 +45,12 @@ export default {
     },
     confirmDeletion(){
       this.$store.dispatch('confirmDelete')
+      this.$toast.success("Your information has been deleted",{
+        position: "bottom-right",
+        timeout: 3000,
+        pauseOnHover: true,
+        hideProgressBar: true,
+      })
     }
   },
 

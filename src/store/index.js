@@ -122,8 +122,8 @@ export default new Vuex.Store({
 
     confirmDelete({state, commit}){
       if(state.showAlert.parent == 'credentials') {
-        commit('deleteCredentials', state.showAlert.child)
-        state.showAlert.state = !state.showAlert.state
+        commit('deleteCredentials', state.showAlert.child );
+        state.showAlert.state = !state.showAlert.state;
       }
     },
 
