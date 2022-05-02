@@ -82,8 +82,8 @@ export default {
   props: {
     details: Object,
     id: Number,
-    type : 'credential'
   },
+
   data: () => {
     return {
       cardOpen: false,
@@ -96,19 +96,11 @@ export default {
       this.$router.replace({path:`/credentials/${id}/update`, params: {id : id}})
     },
 
-    showAlert(){
-      this.$store.commit('showAlert');
-    },
-
     deleteCredentials(){
-      this.showAlert();
-      this.cancleAlert();
-      this.$store.dispatch('deleteCredentials' , this.id)
+      // this.$store.dispatch('deleteCredentials' , this.id)
+      this.$store.commit('showAlert', {state:true, parent :'credentials', child:this.id})
     },
 
-    cancleAlert(){
-      this.$store.commit('cancleAlert')
-    }
   },
 
   computed: {

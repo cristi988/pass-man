@@ -6,8 +6,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     menu: false,
-    showAlert: false,
-    cancelAlert: false,
+    showAlert: {
+      state: false,
+      parentComponent: '',
+      child: -1,
+    },
     credentials:[],
     bankDetails:[],
     contacts: [],
@@ -38,8 +41,20 @@ export default new Vuex.Store({
       })
     },
 
+    getAlertState(state){
+      return state.showAlert.state;
+    },
+
     getContacts(state){
-      return [...state.contacts];
+      // return [...state.contacts];
+      return state.contacts.filter((contact)=>{
+        if((contact.firstName.toLowerCase().includes(state.searchTerm)) ||
+            (contact.lastName.toLowerCase().includes(state.searchTerm)) ||
+            (contact.email.toLowerCase().includes(state.searchTerm))||
+            (contact.phone.toLowerCase().includes(state.searchTerm))){
+          return contact
+        }
+      })
     },
   },
 
@@ -52,12 +67,9 @@ export default new Vuex.Store({
       state.menu = !state.menu;
     },
 
-    showAlert(state){
-      state.showAlert = !state.showAlert;
-    },
 
-    cancelAlert(state){
-      state.cancelAlert = !state.cancelAlert;
+    showAlert(state, payload) {
+     state.showAlert = {...payload}
     },
 
     storeCredentials(state, credential) {
@@ -106,10 +118,16 @@ export default new Vuex.Store({
 
     deleteContacts({commit}, id){
       commit('deleteContact', id)
-    }
+    },
+
+    confirmDelete({state, commit}){
+      if(state.showAlert.parent == 'credentials') {
+        commit('deleteCredentials', state.showAlert.child)
+        state.showAlert.state = !state.showAlert.state
+      }
+    },
+
   },
-
-
   modules: {
   }
 })

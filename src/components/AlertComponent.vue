@@ -12,12 +12,12 @@
       <div class=" flex justify-between mt-4 h-14 border-t border-gray-400 ">
         <button
             class="w-full border-r border-gray-400 text-sky-500 font-bold hover:bg-gray-200 hover:rounded-bl-xl"
-        >
+            @click="cancelAlert()">
           Cancel
         </button>
         <button
             class="w-full text-sky-500 font-bold hover:bg-gray-200 hover:rounded-br-xl"
-        >
+        @click="confirmDeletion()">
           Yes
         </button>
       </div>
@@ -30,13 +30,31 @@ export default {
   name: "AlertComponent",
   props:{
     type : '',
-    // visible : false,
+
+  },
+
+  data() {
+    return {
+
+    }
   },
 
   methods : {
+    cancelAlert(){
+      this.$store.commit('showAlert');
+    },
+    confirmDeletion(){
+      this.$store.dispatch('confirmDelete')
+    }
+  },
+
+  computed : {
 
   },
 
+  mounted(){
+
+  }
 }
 </script>
 

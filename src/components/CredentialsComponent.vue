@@ -31,7 +31,7 @@
           v-bind:id="index"
           v-for="(credential, index) in credentials"/>
     </div>
-    <AlertComponent v-if="showAlert"/>
+    <AlertComponent v-if="showAlert" />
       <router-view></router-view>
   </div>
 </template>
@@ -45,9 +45,9 @@ export default {
   name : 'CredentialsComponent',
 
   components : {
-      CardModal,
-      CredentialForm,
-    AlertComponent
+    CardModal,
+    CredentialForm,
+    AlertComponent,
   },
 
   data(){
@@ -69,8 +69,6 @@ export default {
       this.$store.commit('setSearchTerm', event.target.value)
     },
 
-
-
   },
 
   watch:{
@@ -88,13 +86,8 @@ export default {
     },
 
     showAlert(){
-      return this.$store.state.showAlert;
+      return this.$store.getters.getAlertState;
     },
-
-    cancelAlert(){
-      this.$store.state.cancelAlert;
-    }
-
   },
 }
 </script>
